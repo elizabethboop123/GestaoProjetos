@@ -1,0 +1,74 @@
+<html>
+    <head>
+        {% load staticfiles %}
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="{% static 'semantic/semantic.css'%}" />
+        <link rel="stylesheet" href="{% static 'semantic/base.css'%}" />
+        <title>{%block titulo%}{%endblock%}</title>
+    </head>
+    <body class="vermelho">
+        <header class="cabecalho">
+            <div class="row"> 
+                <h2 class="ui center aligned icon header branco"> <i class="users circular branco icon" id="icone"></i>PROJETOS</h2>
+            </div>
+        </header>
+        <article class"corpo">
+            <nav class="ui center aligned grid">
+                <div class="column">
+                    <div class="ui red inverted menu cor">
+                        <a href="/projeto/cadastro.html" class="item"><i class="settings icon"></i>
+                            Cadastro de Projeto
+                        </a>
+                        <a href="/nucleo/cadastro.html" class="item"><i class="block layout icon"></i>
+                            Cadastro de Núcleo
+                        </a>
+<<<<<<< Updated upstream
+                        <a href="/coordenador/cadastro.html" class="item"><i class="user icon"></i>
+                            Cadastro de Coordenador
+                        </a>
+                        <a href="/bolsista/cadastro" class="item"><i class="student icon"></i>
+=======
+                        <a href="/professor/cadastro.html" class="item"><i class="user icon"></i>
+                            Cadastro de Coordenador
+                        </a>
+                        <a href="/aluno/cadastro" class="item"><i class="student icon"></i>
+>>>>>>> Stashed changes
+                            Cadastro de Bolsistas
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="ui segment cinza">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="three wide column"></div>
+                        <div class="ten wide column">       
+                            {%block conteudo%}
+                            {%endblock%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+<<<<<<< Updated upstream
+       <footer class="ui grid footer rodape">
+            <div class="sixteen wide column">
+                <div class="row">
+                    <div class="three wide column"></div>
+                </div>
+                <div class="ui segment"> <img class="ui small image " src="{% static 'semantic/Logo - F├бbrica de Software.svg'%}">
+=======
+       <footer class="ui grid rodape">
+            <div class="row">
+                 <div class="sixteen wide column">
+                    <div class="ui segment small images">
+                        <img src="{% static 'semantic/Logo.svg'%}">
+                        <img class="direita" id="icone" src="{% static 'semantic/ifc.png'%}">
+                    </div> 
+                </div>
+            </div>
+>>>>>>> Stashed changes
+        </footer>
+    </body>
+</html>
+

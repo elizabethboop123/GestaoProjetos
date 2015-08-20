@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Projeto{% endblock %}
+{% block conteudo%} 
+<form class="ui form" method='POST'>
+<<<<<<< Updated upstream
+	{% csrf_token %}
+=======
+    {% csrf_token %}
+>>>>>>> Stashed changes
+    <h1 class="ui header"> Cadastro de Projeto</h1>
+        <div class="field">
+            <label>Nome do Projeto</label>
+            {{form.nome_projeto}}
+            {% if form.nome_projeto.errors %}
+                 <div class="ui red pointing label">
+                    {{ form.nome_projeto.errors }}
+                 </div>
+            {% endif %}
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>Coordenador</label>
+                {{form.coordenador}}
+                {% if form.coordenador.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.coordenador.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="field">
+                <label>Núcleo</label>
+                    {{form.nucleo}}
+                {% if form.nucleo.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.nucleo.errors }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>Porofessores Auxiliares</label>
+                {{form.cliente}}
+                {% if form.participante.errors %}
+                 <div class="ui red pointing label">
+                    {{ form.participante.errors }}
+                 </div>
+                {% endif %}
+            </div>
+            <div class="field">
+                <label>Bolsistas</label>
+                {{ form.bolsista }}
+                {% if form.bolsista.errors %}
+                 <div class="ui red pointing label">
+                    {{ form.bolsista.errors }}
+                 </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>Data de Início</label>
+                {{form.data_inicio}}
+                {% if form.data_inicio.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.data_inicio.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="field">
+                <label>Data de fim</label>
+                {{form.data_termino}}
+                {% if form.data_termino.errors %}
+                 <div class="ui red pointing label">
+                    {{ form.data_termino.errors }}
+                 </div>
+                {% endif %}
+            </div>
+        </div>
+        <input type="submit" class="ui submit button direita verde_escuro"/>   
+    </div>
+</form>
+{%endblock%}
