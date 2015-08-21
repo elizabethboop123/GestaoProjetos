@@ -1,3 +1,4 @@
+ # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.contratado import FormContratado

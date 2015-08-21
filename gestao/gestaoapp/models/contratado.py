@@ -11,4 +11,4 @@ class Contratado (models.Model):
 	dt_termino = models.DateField()
 
 	def __unicode__(self):
-		return self.aluno
+		return self.aluno.first_name

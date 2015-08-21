@@ -27,7 +27,7 @@ class CadastroAluno(View):
 		else:
 
 			form = FormAluno(request.POST)
-
+			print(type(form['filho'].value()))
 		if form.is_valid():
 			form.save(request)
 

@@ -2,15 +2,11 @@
 {% block titulo %} Cadastro de Projeto{% endblock %}
 {% block conteudo%} 
 <form class="ui form" method='POST'>
-<<<<<<< Updated upstream
-	{% csrf_token %}
-=======
     {% csrf_token %}
->>>>>>> Stashed changes
     <h1 class="ui header"> Cadastro de Projeto</h1>
         <div class="field">
             <label>Nome do Projeto</label>
-            {{form.nome_projeto}}
+            {{form.nome}}
             {% if form.nome_projeto.errors %}
                  <div class="ui red pointing label">
                     {{ form.nome_projeto.errors }}
