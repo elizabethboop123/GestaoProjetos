@@ -9,9 +9,9 @@
                 <label>Projeto</label>
                 {{form.projeto}}
                 {% if form.projeto.errors %}
-                 <div class="ui red pointing label">
-                    {{ form.projeto.errors }}
-                 </div>
+                    <div class="ui red pointing label">
+                        {{ form.projeto.errors }}
+                    </div>
                 {% endif %}
             </div>
             <div class="two fields">
@@ -19,18 +19,18 @@
                     <label>Aluno</label>
                     {{form.aluno}}
                     {% if form.aluno.errors %}
-                 <div class="ui red pointing label">
-                    {{ form.aluno.errors }}
-                 </div>
-                {% endif %}
+                        <div class="ui red pointing label">
+                            {{ form.aluno.errors }}
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="field">
                     <label>Bolsista</label>
-                        <select name="bolsa" required>
-                            <option value="">Selecione</option>
-                            <option value="True">Sim</option>
-                            <option value="False">Não</option>
-                        </select>
+                    <select name="bolsa" required>
+                        <option value="">Selecione</option>
+                        <option value="True">Sim</option>
+                        <option value="False">Não</option>
+                    </select>
                 </div>
             </div>
             <div class="two fields">
@@ -38,19 +38,19 @@
                     <label>Data de início</label>
                     {{form.dt_inicio}}
                     {% if form.dt_inicio.errors %}
-                 <div class="ui red pointing label">
-                    {{ form.dt_inicio.errors }}
-                 </div>
-                {% endif %}
+                        <div class="ui red pointing label">
+                            {{ form.dt_inicio.errors }}
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="field">
                     <label>Data de Término</label>
                     {{form.dt_termino}}
                     {% if form.dt_termino.errors %}
-                 <div class="ui red pointing label">
-                    {{ form.dt_termino.errors }}
-                 </div>
-                {% endif %}
+                        <div class="ui red pointing label">
+                            {{ form.dt_termino.errors }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 		    <input type="submit" class="ui submit button direita verde_escuro"/>	
