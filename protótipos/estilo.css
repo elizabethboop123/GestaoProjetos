@@ -1,0 +1,11 @@
+body{
+		background-color: #D8D8D8;
+}
+.botao{
+		 float: left;
+		 background-color: Red;
+
+}
+.cinza{
+        background: #dbc9c9 !important;
+}
