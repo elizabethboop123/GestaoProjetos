@@ -7,8 +7,6 @@ from gestaoapp.views import CadastroAluno, CadastroNucleo, CadastroProjeto, Cada
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^home/',
-
     url(r'^aluno/', CadastroAluno.as_view()),
     url(r'^editaraluno/(?P<aluno_id>\d+)/$', CadastroAluno.as_view()),
 
