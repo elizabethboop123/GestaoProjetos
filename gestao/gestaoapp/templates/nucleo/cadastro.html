@@ -6,18 +6,19 @@
 	    <h1 class="ui header"> Cadastro de Núcleo</h1>
 	    <div class="field">
 	        <label>Nome do Núcleo</label>
-	        {{form.nome_nucleo}}
+	        {{form.nome}}
 	    </div>
 	    <div class="field">
 	        <label>Projetos</label>
-	        <select class="ui fluid dropdown">
+	        {{form.projeto}}
+	       <!--  <select class="ui fluid dropdown">
 	            <option value="">Selecione</option>
 	            <option value="AL">Detrans</option>
 	            <option value="AL">Gestão de Projetos</option>
-	        </select>
-	        {% if form.coordenador.errors %}
+	        </select> -->
+	        {% if form.projeto.errors %}
 	            <div class="ui red pointing label">
-	                {{ form.coordenador.errors }}
+	                {{ form.projeto.errors }}
 	           </div>
 	        {% endif %}
 	    </div>

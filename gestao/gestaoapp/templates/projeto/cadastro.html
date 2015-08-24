@@ -7,9 +7,9 @@
         <div class="field">
             <label>Nome do Projeto</label>
             {{form.nome}}
-            {% if form.nome_projeto.errors %}
+            {% if form.nome.errors %}
                  <div class="ui red pointing label">
-                    {{ form.nome_projeto.errors }}
+                    {{ form.nome.errors }}
                  </div>
             {% endif %}
         </div>
@@ -24,18 +24,7 @@
                 {% endif %}
             </div>
             <div class="field">
-                <label>Núcleo</label>
-                    {{form.nucleo}}
-                {% if form.nucleo.errors %}
-                    <div class="ui red pointing label">
-                        {{ form.nucleo.errors }}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-        <div class="two fields">
-            <div class="field">
-                <label>Porofessores Auxiliares</label>
+                <label>Professores Auxiliares</label>
                 {{form.cliente}}
                 {% if form.participante.errors %}
                  <div class="ui red pointing label">
@@ -43,15 +32,35 @@
                  </div>
                 {% endif %}
             </div>
+        </div>
+        <div class="two fields">
             <div class="field">
-                <label>Bolsistas</label>
-                {{ form.bolsista }}
-                {% if form.bolsista.errors %}
+                <label>Cliente</label>
+                {{form.cliente}}
+                {% if form.cliente.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.cliente.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="field">
+                <label>Edital</label>
+                {{form.cliente}}
+                {% if form.edital.errors %}
                  <div class="ui red pointing label">
-                    {{ form.bolsista.errors }}
+                    {{ form.edital.errors }}
                  </div>
                 {% endif %}
             </div>
+        </div>
+        <div class="field">
+            <label>Bolsistas</label>
+            {{ form.bolsista }}
+            {% if form.bolsista.errors %}
+             <div class="ui red pointing label">
+                {{ form.bolsista.errors }}
+             </div>
+            {% endif %}
         </div>
         <div class="two fields">
             <div class="field">

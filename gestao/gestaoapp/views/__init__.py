@@ -6,3 +6,4 @@ from gestaoapp.views.nucleo import CadastroNucleo
 from gestaoapp.views.projeto import CadastroProjeto
 from gestaoapp.views.edital import CadastroEdital
 from gestaoapp.views.contratado import CadastroContratado
+from gestaoapp.views.graduacao import CadastroGraduacao
