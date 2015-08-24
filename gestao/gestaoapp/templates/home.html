@@ -1,4 +1,51 @@
 {% extends 'base.html'%}
 {% block titulo %} Cadastro de Projeto{% endblock %}
+<article class"corpo">
+            <nav class="ui center aligned grid">
+                <div class="column">
+                    <div class="ui red inverted menu cor">
+                        <a href="/projeto/cadastro.html" class="item"><i class="settings icon"></i>
+                            Cadastro de Projeto
+                        </a>
+                        <a href="/nucleo/cadastro.html" class="item"><i class="block layout icon"></i>
+                            Cadastro de Núcleo
+                        </a>
+                        <a href="/professor/cadastro.html" class="item"><i class="user icon"></i>
+                            Cadastro de Professor
+                        </a>
+                        <a href="/aluno/cadastro.html" class="item"><i class="student icon"></i>
+                            Cadastro de Aluno
+                        </a>
+                        <a href="/edital/cadastro.html" class="item"><i class="newspaper icon"></i>
+                            Cadastro de Edital
+                        </a>
+                        <a href="/graduacao/cadastro.html" class="item"><i class="student icon"></i>
+                            Cadastro de Graduação
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="ui segment cinza">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="three wide column"></div>
+                        <div class="ten wide column">       
+                            {%block conteudo%}
+                            {%endblock%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+       <footer class="ui grid rodape">
+            <div class="row">
+                 <div class="sixteen wide column">
+                    <div class="ui segment small images">
+                        <img src="{% static 'semantic/Logo.svg'%}">
+                        <img class="direita" id="icone" src="{% static 'semantic/ifc.png'%}">
+                    </div> 
+                </div>
+            </div>
+        </footer>
 {% block conteudo%} 
 {%endblock%}
