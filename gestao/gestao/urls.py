@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from gestaoapp.views import CadastroAluno, CadastroNucleo, CadastroProjeto, CadastroProfessor, CadastroEdital, CadastroContratado, CadastroGraduacao
+from gestaoapp.views import CadastroAluno, CadastroNucleo, CadastroProjeto, CadastroProfessor, CadastroEdital, CadastroContratado, CadastroGraduacao, CadastroCurso, CadastroNivel
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,6 +30,10 @@ urlpatterns = [
     url(r'^graduacao/', CadastroGraduacao.as_view()),
     url(r'^editargraduacao/(?P<graduacao_id>\d+)/$', CadastroGraduacao.as_view()),
 
+    url(r'^curso/', CadastroCurso.as_view()),
+    url(r'^editarcurso/(?P<curso_id>\d+)/$', CadastroCurso.as_view()),
 
+    url(r'^nivel/', CadastroNivel.as_view()),
+    url(r'^editarnivel/(?P<nivel_id>\d+)/$', CadastroNivel.as_view()),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
