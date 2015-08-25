@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.contratado import FormContratado
 from gestaoapp.models.contratado import Contratado
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroContratado(View):
+class CadastroContratado(LoginRequiredMixin, View):
 
 	template = 'contratado/cadastro.html'
 

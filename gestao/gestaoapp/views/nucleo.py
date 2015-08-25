@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.nucleo import FormNucleo
 from gestaoapp.models.nucleo import Nucleo
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroNucleo(View):
+class CadastroNucleo(LoginRequiredMixin, View):
 
 	template = 'nucleo/cadastro.html'
 

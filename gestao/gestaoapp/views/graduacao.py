@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.graduacao import FormGraduacao
 from gestaoapp.models.graduacao import Graduacao
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroGraduacao(View):
+class CadastroGraduacao(LoginRequiredMixin, View):
 
 	template = 'graduacao/cadastro.html'
 

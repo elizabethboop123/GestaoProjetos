@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.edital import FormEdital
 from gestaoapp.models.edital import Edital
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroEdital(View):
+class CadastroEdital(LoginRequiredMixin, View):
 
 	template = 'edital/cadastro.html'
 

@@ -6,6 +6,8 @@ from gestaoapp.views import CadastroAluno, CadastroNucleo, CadastroProjeto, Cada
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}, name='logout'),
     
     url(r'^aluno/', CadastroAluno.as_view()),
     url(r'^editaraluno/(?P<aluno_id>\d+)/$', CadastroAluno.as_view()),

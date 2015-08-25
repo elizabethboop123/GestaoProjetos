@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.professor import FormProfessor
 from gestaoapp.models.professor import Professor
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroProfessor(View):
+class CadastroProfessor(LoginRequiredMixin, View):
 
 	template = 'professor/cadastro.html'
 
