@@ -653,7 +653,8 @@ $.fn.form = function(fields, parameters) {
                 $fieldGroup.removeClass(className.error);
                 $prompt.remove();
               }
-              if(isDropdown) {
+              if(isDr
+                opdown) {
                 module.verbose('Resetting dropdown value', $element, defaultValue);
                 $element.dropdown('clear');
               }
