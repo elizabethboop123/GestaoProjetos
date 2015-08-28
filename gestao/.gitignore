@@ -1,5 +1,0 @@
-*.sqlite3
-.idea
-*.pyc
-/build/
-/migrations/
