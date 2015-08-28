@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Núcleo{% endblock %}
+{% block conteudo%} 
+	<form method='POST' class="ui form" >
+		{% csrf_token %}     
+	    <h1 class="ui header"> Cadastro de Núcleo</h1>
+	    <div class="field">
+	        <label>Nome do Núcleo</label>
+	        {{form.nome}}
+	    </div>
+	    <div class="field">
+	        <label>Projetos</label>
+	        {{form.projeto}}
+	       <!--  <select class="ui fluid dropdown">
+	            <option value="">Selecione</option>
+	            <option value="AL">Detrans</option>
+	            <option value="AL">Gestão de Projetos</option>
+	        </select> -->
+	        {% if form.projeto.errors %}
+	            <div class="ui red pointing label">
+	                {{ form.projeto.errors }}
+	           </div>
+	        {% endif %}
+	    </div>
+	    <div class="field">
+	        <label>Descrição</label>
+	        {{form.descricao}}
+	    </div>
+	    <input type="submit" class="ui submit button direita verde_escuro"/>
+	</form>    
+{%endblock%}
