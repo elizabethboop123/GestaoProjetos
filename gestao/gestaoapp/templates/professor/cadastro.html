@@ -54,16 +54,75 @@
                     {% endif %}
                 </div>
              </div>
-             <div class="two fields">
+
+            <div class="field">
+                <label>Rua</label>
+                {{form.rua}}
+                {% if form.rua.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.rua.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="three fields">
+                <div class="field">
+                    <label>Número</label>
+                    {{form.numero}}
+                    {% if form.numero.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.numero.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Complemento</label>
+                    {{form.complemento}}
+                    {% if form.complemento.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.complemento.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Bairro</label>
+                    {{form.bairro}}
+                    {% if form.bairro.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.bairro.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Cidade</label>
+                    {{form.cidade}}
+                    {% if form.cidade.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.cidade.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Estado</label>
+                    {{form.estado}}
+                    {% if form.estado.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.estado.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
              	<div class="field">
-                    <label>Endereço</label>
-                    {{form.endereco}}
-                    {% if form.endereco.errors %}
-                 	    <div class="ui red pointing label">
-                            {{ form.endereco.errors }}
-                 	    </div>
-                	{% endif %}
-            	</div>
+                    <label>CEP</label>
+                    {{form.cep}}
+                    {% if form.cep.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.cep.errors }}
+                        </div>
+                    {% endif %}
+                </div>
                 <div class="field">
                     <label>Telefone</label>
                     {{form.telefone}}
@@ -105,22 +164,22 @@
                     {% endif %}
                 </div>
                 <div class="field">
-                    <label>Senha</label>
-                    {{form.password}}
-                    {% if form.password.errors %}
+                    <label>E-mail</label>
+                    {{form.email}}
+                    {% if form.email.errors %}
                         <div class="ui red pointing label">
-                            {{ form.password.errors }}
+                            {{ form.email.errors }}
                         </div>
                     {% endif %}
                 </div>
             </div>
             <div class="two fields">
                 <div class="field">
-                    <label>E-mail</label>
-                    {{form.email}}
-                    {% if form.email.errors %}
+                    <label>Senha</label>
+                    {{form.password}}
+                    {% if form.password.errors %}
                         <div class="ui red pointing label">
-                            {{ form.email.errors }}
+                            {{ form.password.errors }}
                         </div>
                     {% endif %}
                 </div>
