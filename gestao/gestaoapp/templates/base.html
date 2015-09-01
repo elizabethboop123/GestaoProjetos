@@ -1,4 +1,4 @@
-<html lang="pt-br">
+<html>
     <head>
         {% load staticfiles %}
         <meta charset="utf-8"/>
@@ -11,11 +11,11 @@
             <div class="row"> 
              <div class='ten wide column'>
                 <h2 class="ui center aligned icon header branco"> <i class="users circular branco icon" id="icone"></i>PROJETOS</h2>
-            </div>
-        </header>
+        </header>         
         <article class"corpo">
-            <nav class="ui center aligned grid">
-                <div class="column">
+            {% if user.is_authenticated %} 
+                <div class="ui grid">
+                  <nav class="ui center aligned grid">
                     <div class="ui red inverted menu cor">
                         <a href="/projeto/cadastro.html" class="item"><i class="settings icon"></i>
                             Cadastro de Projeto
@@ -46,7 +46,7 @@
                      </div>
                     </div>
                 </div>
-            </nav>
+            {% endif %}
             <div class="ui segment cinza">
                 <div class="ui grid">
                     <div class="row">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </article>
-       <footer class="ui grid rodape">
+        <footer class="ui grid rodape">
             <div class="row">
                  <div class="sixteen wide column">
                     <div class="ui segment small images">
@@ -71,4 +71,3 @@
         </footer>
     </body>
 </html>
-
