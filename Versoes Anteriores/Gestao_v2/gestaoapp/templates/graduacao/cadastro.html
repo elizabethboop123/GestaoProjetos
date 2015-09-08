@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Graduação{% endblock %}
+{% block conteudo%} 
+	<form method='POST' class="ui form" >
+		{% csrf_token %}     
+	    <h1 class="ui header"> Cadastro de Graduação</h1>
+	    <div class="field">
+	        <label>Graduação</label>
+	        
+	        {{form.titulo}}
+	    </div>
+	    <input type="submit" class="ui submit button direita verde_escuro"/>
+	</form>    
+{%endblock%}

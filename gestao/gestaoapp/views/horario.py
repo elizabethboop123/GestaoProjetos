@@ -3,6 +3,7 @@ from django.views.generic.base import View
 from gestaoapp.forms.horario import FormHorario
 from gestaoapp.models.horario import Horario
 from gestaoapp.models.usuario import Usuario
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroHorario(View):
 

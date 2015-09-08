@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.perfil import FormPerfil
 from gestaoapp.models.perfil import Perfil
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroPerfil(View):
 
