@@ -1,11 +1,4 @@
-
-from gestaoapp.models.pessoa import Pessoa
-from gestaoapp.models.graduacao import Graduacao
-from gestaoapp.models.professor import Professor
-from gestaoapp.models.aluno import Aluno
-from gestaoapp.models.nucleo import Nucleo
-from gestaoapp.models.contratado import Contratado
-from gestaoapp.models.edital import Edital
-from gestaoapp.models.projeto import Projeto
-from gestaoapp.models.nivel import Nivel
-from gestaoapp.models.curso import Curso
+from gestaoapp.models.usuario import Usuario
+from gestaoapp.models.perfil import Perfil
+from gestaoapp.models.horario import Horario
+from gestaoapp.models.dia import Dia

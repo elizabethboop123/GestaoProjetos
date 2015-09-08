@@ -2,13 +2,7 @@ from django.contrib import admin
 
 from gestaoapp.models import *
 
-admin.site.register(Aluno)
-admin.site.register(Professor)
-admin.site.register(Nucleo)
-admin.site.register(Projeto)
-admin.site.register(Graduacao)
-admin.site.register(Contratado)
-admin.site.register(Pessoa)
-admin.site.register(Edital)
-admin.site.register(Curso)
-admin.site.register(Nivel)
+admin.site.register(Usuario)
+admin.site.register(Horario)
+admin.site.register(Perfil)
+admin.site.register(Dia)
