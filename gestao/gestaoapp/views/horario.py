@@ -5,7 +5,7 @@ from gestaoapp.models.horario import Horario
 from gestaoapp.models.usuario import Usuario
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroHorario(View):
+class CadastroHorario(LoginRequiredMixin,View):
 
 	template = 'horario/cadastro.html'
 
