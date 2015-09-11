@@ -24,45 +24,22 @@
         </div>
         </header>         
         <article class"corpo">
+            {% if user.is_authenticated %}
             <nav>
                 <ul>
-                    <li><a href="#">Projeto</a>
+                    <li><a href="#">Usuário</a>
                         <ul>
-                            <li><a href="/projeto/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
+                            <li><a href="/usuario/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Professor</a>
+                    <li><a href="#">Horário</a>
                         <ul>
-                            <li><a href="/professor/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
+                            <li><a href="/horario/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Aluno</a>
-                        <ul>
-                            <li><a href="/aluno/cadastro.html" class="item branco"><i class="users icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Núcleo</a>
-                        <ul>
-                            <li><a href="/nucleo/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Edital</a>
-                        <ul>
-                            <li><a href="/edital/cadastro.html" class="item branco"><i class="newspaper icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Graduação</a>
-                        <ul>
-                            <li><a href="/graduacao/cadastro.html" class="item branco"><i class="student icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Contratado</a>
-                        <ul>
-                            <li> <a href="/contratado/cadastro.html" class="item branco"><i class="desktop icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <ul>
             </nav>
+             {% endif %}
             <div class="ui segment cinza">
                 <div class="ui grid">
                     <div class="row">
