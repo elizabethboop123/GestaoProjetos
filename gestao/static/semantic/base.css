@@ -68,9 +68,6 @@
 .menu{
 	margin-top: 0%;
 }
-.altura{
-	height: 0%;
-}
 
 
 nav ul ul {
@@ -83,9 +80,6 @@ nav ul li:hover > ul {
 }
 
 nav ul {
-	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
-	background: 
-	-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: #267a7a ;
 	padding: 0 20px;
 	list-style: none;
@@ -99,9 +93,6 @@ nav ul li {
 	float: left;
 }
 nav ul li:hover {
-	background: linear-gradient(top, #4169E1 0%, #0000CD 40%);
-	-moz-linear-gradient(
-	top, #4f5964 0%, #5f6975 40%);
 	background: #007D82;
 }
 nav ul li:hover a {
@@ -115,7 +106,6 @@ nav ul li a {
 	text-decoration: none;
 }
 			
-		
 nav ul ul {
 	background: #007D7B;
 	padding: 0;
