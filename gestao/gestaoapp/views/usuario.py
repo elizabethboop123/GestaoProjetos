@@ -31,7 +31,7 @@ class CadastroUsuario(View):
 		if form.is_valid():
 			form.save(request)
 
-			return redirect('/')
+			return redirect('/login')
 
 		else:
 			return render(request, self.template, {'form': form})

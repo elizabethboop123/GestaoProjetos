@@ -10,7 +10,7 @@ class Usuario(User):
 	foto = models.FileField(null = True, blank=True, upload_to='')
 	carga_horaria = models.IntegerField()
 	telefone1 = models.CharField(max_length=11)
-	telefone2 = models.CharField(max_length=11, blank=True)
+	telefone2 = models.CharField(max_length=11, blank=True, null=True)
 	vinculo_institucional = models.CharField(max_length=255)
 	curso = models.CharField(max_length=255)
 	periodo =models.CharField(max_length=255)
