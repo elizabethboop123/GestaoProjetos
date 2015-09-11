@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
         {% load staticfiles %}
         <meta charset="utf-8"/>
@@ -6,47 +6,63 @@
         <link rel="stylesheet" href="{% static 'semantic/base.css'%}" />
         <title>{%block titulo%}{%endblock%}</title>
     </head>
-    <body class="vermelho">
+    <body class="verde">
         <header class="cabecalho">
+        <div class="ui grid">
             <div class="row"> 
-             <div class='ten wide column'>
-                <h2 class="ui center aligned icon header branco"> <i class="users circular branco icon" id="icone"></i>PROJETOS</h2>
-        </header>         
-        <article class"corpo">
-            {% if user.is_authenticated %} 
-                <div class="ui grid">
-                  <nav class="ui center aligned grid">
-                    <div class="ui red inverted menu cor">
-                        <a href="/projeto/cadastro.html" class="item"><i class="settings icon"></i>
-                            Cadastro de Projeto
-                        </a>
-                        <a href="/nucleo/cadastro.html" class="item"><i class="block layout icon"></i>
-                            Cadastro de Núcleo
-                        </a>
-                        <a href="/professor/cadastro.html" class="item"><i class="user icon"></i>
-                            Cadastro de Professor
-                        </a>
-                        <a href="/aluno/cadastro.html" class="item"><i class="users icon"></i>
-                            Cadastro de Aluno
-                        </a>
-                        <a href="/edital/cadastro.html" class="item"><i class="newspaper icon"></i>
-                            Cadastro de Edital
-                        </a>
-                        <a href="/graduacao/cadastro.html" class="item"><i class="student icon"></i>
-                            Cadastro de Graduação
-                        </a>
-                         <a href="/contratado/cadastro.html" class="item"><i class="desktop icon"></i>
-                            Cadastro de Contratado
-                        </a>
-                        <div  class= "direita">
-                        <nav class='baixo logout branco'>
+                <div class='five wide column'>
+                    <h1 class="branco letra"><img src="{% static 'semantic/blueprint.png'%}" class="branco"> PROJETOS</h1>
+                </div>
+                    <div class="ui segment cinza">
+                        <div class='logout sair'>
                             <a href="/logout" class="item"><i class="sign out icon"></i>Sair
-                        </a>
-                         </nav>
-                     </div>
+                             </a>
+                        </div>
                     </div>
                 </div>
-            {% endif %}
+            </div>
+        </div>
+        </header>         
+        <article class"corpo">
+            <nav>
+                <ul>
+                    <li><a href="#">Projeto</a>
+                        <ul>
+                            <li><a href="/projeto/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Professor</a>
+                        <ul>
+                            <li><a href="/professor/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Aluno</a>
+                        <ul>
+                            <li><a href="/aluno/cadastro.html" class="item branco"><i class="users icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Núcleo</a>
+                        <ul>
+                            <li><a href="/nucleo/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Edital</a>
+                        <ul>
+                            <li><a href="/edital/cadastro.html" class="item branco"><i class="newspaper icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Graduação</a>
+                        <ul>
+                            <li><a href="/graduacao/cadastro.html" class="item branco"><i class="student icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contratado</a>
+                        <ul>
+                            <li> <a href="/contratado/cadastro.html" class="item branco"><i class="desktop icon branco"></i>Cadastrar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
             <div class="ui segment cinza">
                 <div class="ui grid">
                     <div class="row">
@@ -59,14 +75,12 @@
                 </div>
             </div>
         </article>
-        <footer class="ui grid rodape">
-            <div class="row">
-                 <div class="sixteen wide column">
-                    <div class="ui segment small images">
-                        <img src="{% static 'semantic/Logo.svg'%}">
-                        <img class="direita" id="icone" src="{% static 'semantic/ifc.png'%}">
-                    </div> 
-                </div>
+        <footer class="ui grid">
+            <div class="sixteen wide column">
+                <div class="ui small images verde">
+                    <img  id="icone" src="{% static 'semantic/fabrica.png'%}">
+                    <img  class="d" id="icone" src="{% static 'semantic/ifc2.png'%}">
+                </div> 
             </div>
         </footer>
     </body>
