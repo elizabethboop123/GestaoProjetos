@@ -2,13 +2,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.views import password_reset
 from gestaoapp.views import CadastroUsuario,CadastroPerfil, CadastroHorario
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}, name='logout'),
-    
+    url(r'^alterar/$', 'django.contrib.auth.views.password_reset', {'template_name': 'alterar.html'}, name="alterar"),
+
     url(r'^usuario/', CadastroUsuario.as_view()),
     url(r'^editarusuario/(?P<usuario_id>\d+)/$', CadastroUsuario.as_view()),
 

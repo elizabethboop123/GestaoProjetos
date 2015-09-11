@@ -35,7 +35,7 @@ class CadastroHorario(LoginRequiredMixin,View):
 			user = Usuario.objects.get(id=request.user.id)
 			user.dia.add(dia)
 
-			return redirect('/')
+			return redirect('/horario')
 
 		else:
 			return render(request, self.template, {'form': form})
