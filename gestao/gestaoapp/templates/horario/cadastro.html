@@ -1,11 +1,56 @@
-<form method='POST' >
-	{% csrf_token %}
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Horário{% endblock %}
+{% block conteudo%} 
+	<form method='POST' enctype=" multipart/form-data">
+        {% csrf_token %}           
+        <h1 class="ui header">Cadastro de Horário</h1>
+        <div class="ui large form">
+	        <div class="two fields">
+			    <div class="field">
+			        <label>Dia da semana</label>
+			        {{form.data}}
+			        {% if data.errors %}
+			        	<div class="ui red pointing label">
+			            	{{ form.data.errors }}
+			            </div>
+			        {% endif %}
+			    </div>
+			    <div class="field">
+			        <label>Turno</label>
+			        {{form.turno}}
+			        {% if turno.errors %}
+			            <div class="ui red pointing label">
+			                {{ form.turno.errors }}
+			            </div>
+			        {% endif %}
+				</div>
+		    </div>
+        	<div class="two fields">
+	            <div class="field">
+	                <label>Horário de início</label>
+	                {{form.hora_inicio}}
+	                {% if hora_inicio.errors %}
+	                	<div class="ui red pointing label">
+	                    	{{ form.hora_inicio.errors }}
+	                 	</div>
+	                {% endif %}
+	            </div>
+	            <div class="field">
+	                <label>Horário de fim</label>
+	                {{form.hora_fim}}
+	                {% if hora_fim.errors %}
+	                 	<div class="ui red pointing label">
+	                   		{{ form.hora_fim.errors }}
+	                 	</div>
+	                {% endif %}
+	            </div>
+	            <input type="submit" class="ui submit button direita verde_escuro"/>
+	        </div>
+	    </div>
+	</form>
+{% endblock %}
 
 
-	{{form}}
 
-	{{form.errors}}
 
-	<input type='submit' value='Enviar'>
-
-</form>
+	
