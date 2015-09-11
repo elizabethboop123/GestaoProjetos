@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
     <head>
         {% load staticfiles %}
         <meta charset="utf-8"/>
@@ -8,38 +8,37 @@
     </head>
     <body class="verde">
         <header class="cabecalho">
-        <div class="ui grid">
-            <div class="row"> 
-                <div class='five wide column'>
-                    <h1 class="branco letra"><img src="{% static 'semantic/blueprint.png'%}" class="branco"> PROJETOS</h1>
-                </div>
-                    <div class="ui segment cinza">
-                        <div class='logout sair'>
-                            <a href="/logout" class="item"><i class="sign out icon"></i>Sair
-                             </a>
-                        </div>
+            <div class="ui grid">
+                <div class="row"> 
+                    <div class='five wide column'>
+                        <h1 class="branco letra"><img src="{% static 'semantic/blueprint.png'%}" class="branco"> PROJETOS</h1>
                     </div>
                 </div>
             </div>
-        </div>
         </header>         
         <article class"corpo">
-            {% if user.is_authenticated %}
-            <nav>
-                <ul>
-                    <li><a href="#">Usuário</a>
-                        <ul>
-                            <li><a href="/usuario/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Horário</a>
-                        <ul>
-                            <li><a href="/horario/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
-                        </ul>
-                    </li>
-                <ul>
-            </nav>
-             {% endif %}
+            <div clas="row">
+                {% if user.is_authenticated %}
+                    <div>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Usuário</a>
+                                    <ul>
+                                        <li><a href="/usuario/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Horário</a>
+                                    <ul>
+                                        <li><a href="/horario/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="direita"><a href="/logout" class="item direita"><i class="sign out icon"></i>Sair
+                                 </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                {% endif %}
+            </div>
             <div class="ui segment cinza">
                 <div class="ui grid">
                     <div class="row">
