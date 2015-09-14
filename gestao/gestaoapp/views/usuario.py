@@ -25,12 +25,10 @@ class CadastroUsuario(View):
 			nome = Usuario.objects.get(id=usuario_id)
 			form = FormUsuario(instance=nome, data=request.POST)
 		else:
-			print(request.FILES)
 			form = FormUsuario(request.POST, request.FILES)
-			
+		print('AQUI')
 		if form.is_valid():
 			form.save(request)
-
 			return redirect('/login')
 
 		else:

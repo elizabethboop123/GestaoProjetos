@@ -5,8 +5,8 @@ from gestaoapp.models.horario import Horario
 
 class Usuario(User):
 	
-	email_opcional = models.EmailField(max_length=254)
-	matricula = models.CharField(max_length=255)
+	email_opcional = models.EmailField(max_length=254, null=True, blank=True)
+	matricula = models.CharField(max_length=255, unique = True)
 	foto = models.FileField(null = True, blank=True, upload_to='')
 	carga_horaria = models.IntegerField()
 	telefone1 = models.CharField(max_length=11)
@@ -16,6 +16,7 @@ class Usuario(User):
 	periodo =models.CharField(max_length=255)
 	perfil = models.ForeignKey(Perfil, null=True, blank=True)
 	dia = models.ManyToManyField(Horario, blank=True)
+	verificacao=models.CharField(max_length=255,null=True, blank=True, unique = True)
 
 	def __unicode__(self):
 		return self.first_name

@@ -2,14 +2,16 @@
 {% block titulo %} Cadastro de Usuário{% endblock %}
 {% block conteudo%} 
 <form method='POST' enctype=" multipart/form-data">
-        {% csrf_token %}           
+        {% csrf_token %}  
+        {{form.erros}}         
         <h1 class="ui header">Cadastro de Usuário</h1>
         <div class="ui large form">
         	<div class="two fields">
 	            <div class="field">
+
 	                <label>Nome</label>
 	                {{form.first_name}}
-	                {% if first_name.errors %}
+	                {% if form.first_name.errors %}
 	                	<div class="ui red pointing label">
 	                    	{{ form.first_name.errors }}
 	                 	</div>
@@ -18,7 +20,7 @@
 	            <div class="field">
 	                <label>Sobrenome</label>
 	                {{form.last_name}}
-	                {% if first_name.errors %}
+	                {% if form.first_name.errors %}
 	                 	<div class="ui red pointing label">
 	                   		{{ form.first_name.errors }}
 	                 	</div>
@@ -29,7 +31,7 @@
             	<div class="field">
 	                <label>Vínculo Institucional</label>
 	                {{form.vinculo_institucional}}
-	                {% if vinculo_institucional.errors %}
+	                {% if form.vinculo_institucional.errors %}
 	                 	<div class="ui red pointing label">
 	                    	{{ form.vinculo_institucional.errors }}
 	                 	</div>
@@ -38,7 +40,7 @@
 	            <div class="field">
 	                <label>Curso</label>
 	                {{form.curso}}
-	                {% if curso.errors %}
+	                {% if form.curso.errors %}
 	                	<div class="ui red pointing label">
 	                    	{{ form.curso.errors }}
 	                 	</div>
@@ -47,7 +49,7 @@
 	            <div class="field">
 	               	<label>Período</label>
 	                {{form.periodo}}
-	                {% if periodo.errors %}
+	                {% if form.periodo.errors %}
 	                 	<div class="ui red pointing label">
 	                    	{{ form.periodo.errors }}
 	                 	</div>
@@ -58,7 +60,7 @@
 	           	<div class="field">
 		            <label>Matrícula</label>
 		            {{form.matricula}}
-		            {% if matricula.errors %}
+		            {% if form.matricula.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.matricula.errors }}
 		                 </div>
@@ -67,7 +69,7 @@
 		        <div class="field">
 		            <label>Carga Horária</label>
 		            {{form.carga_horaria}}
-		            {% if carga_horaria.errors %}
+		            {% if form.carga_horaria.errors %}
 		               	<div ccarga_horarialass="ui red pointing label">
 		                    {{ form.carga_horaria.errors }}
 		                 </div>
@@ -78,7 +80,7 @@
 	            <div class="field">
 		            <label>E-mail</label>
 		            {{form.email}}
-		            {% if email.errors %}
+		            {% if form.email.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.email.errors }}
 		                </div>
@@ -87,7 +89,7 @@
 	            <div class="field">
 		            <label>E-mail Opcional</label>
 		            {{form.email_opcional}}
-		            {% if email_opcional.errors %}
+		            {% if form.email_opcional.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.email_opcional.errors }}
 		                </div>
@@ -98,7 +100,7 @@
 		        <div class="field">
 			        <label>Telefone 1</label>
 			        {{form.telefone1}}
-			        {% if telefone1.errors %}
+			        {% if form.telefone1.errors %}
 			            <div class="ui red pointing label">
 			                {{ form.telefone1.errors }}
 			            </div>
@@ -107,7 +109,7 @@
 			    <div class="field">
 			        <label>Telefone 2</label>
 			        {{form.telefone2}}
-			        {% if telefone2.errors %}
+			        {% if form.telefone2.errors %}
 			            <div class="ui red pointing label">
 			                {{ form.telefone2.errors }}
 			            </div>
@@ -118,7 +120,7 @@
 	            <div class="field">
 		            <label>Usuário</label>
 		            {{form.username}}
-		            {% if username.errors %}
+		            {% if form.username.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.username.errors }}
 		                </div>
@@ -127,7 +129,7 @@
 	            <div class="field">
 		            <label>Senha</label>
 		            {{form.password}}
-		            {% if password.errors %}
+		            {% if form.password.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.password.errors }}
 		                </div>
@@ -136,7 +138,7 @@
 	            <div class="field">
 		            <label>Confirmar Senha</label>
 		            {{form.confirma_senha}}
-		            {% if confirma_senha.errors %}
+		            {% if form.confirma_senha.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.confirma_senha.errors }}
 		                </div>
@@ -146,7 +148,7 @@
 		    <div class="field">
 		            <label>Foto</label>
 		            {{form.foto}}
-		            {% if foto.errors %}
+		            {% if form.foto.errors %}
 		                <div class="ui red pointing label">
 		                   	{{ form.foto.errors }}
 		                </div>
