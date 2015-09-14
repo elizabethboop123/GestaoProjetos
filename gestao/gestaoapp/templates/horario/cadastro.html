@@ -9,7 +9,7 @@
 			    <div class="field">
 			        <label>Dia da semana</label>
 			        {{form.data}}
-			        {% if data.errors %}
+			        {% if form.data.errors %}
 			        	<div class="ui red pointing label">
 			            	{{ form.data.errors }}
 			            </div>
@@ -18,7 +18,7 @@
 			    <div class="field">
 			        <label>Turno</label>
 			        {{form.turno}}
-			        {% if turno.errors %}
+			        {% if form.turno.errors %}
 			            <div class="ui red pointing label">
 			                {{ form.turno.errors }}
 			            </div>
@@ -29,16 +29,16 @@
 	            <div class="field">
 	                <label>Horário de início</label>
 	                {{form.hora_inicio}}
-	                {% if hora_inicio.errors %}
+	                {% if form.hora_inicio.errors %}
 	                	<div class="ui red pointing label">
 	                    	{{ form.hora_inicio.errors }}
 	                 	</div>
 	                {% endif %}
 	            </div>
 	            <div class="field">
-	                <label>Horário de fim</label>
+	                <label>Horário de término</label>
 	                {{form.hora_fim}}
-	                {% if hora_fim.errors %}
+	                {% if form.hora_fim.errors %}
 	                 	<div class="ui red pointing label">
 	                   		{{ form.hora_fim.errors }}
 	                 	</div>

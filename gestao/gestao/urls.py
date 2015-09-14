@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.views import password_reset
-from gestaoapp.views import CadastroUsuario,CadastroPerfil, CadastroHorario
+from gestaoapp.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^editarperfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),
 
     url(r'^horario/', CadastroHorario.as_view()),
+
+    url(r'^sucesso/', sucesso),
     url(r'^editarhorario/(?P<perfil_id>\d+)/$', CadastroHorario.as_view()),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
