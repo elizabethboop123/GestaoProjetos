@@ -42,3 +42,5 @@ class CadastroHorario(LoginRequiredMixin,View):
 
 		else:
 			return render(request, self.template, {'form': form})
+
+exclude = ('last_login',"groups","user_permissions","helptext","is_staff","date_joined",'is_active','dia','mail','verificacao') 

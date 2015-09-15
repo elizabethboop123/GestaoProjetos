@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.usuario import FormUsuario
 from gestaoapp.models.usuario import Usuario
+from gestaoapp.forms.liberar import FormLiberar
 
 class CadastroUsuario(View):
 
@@ -41,10 +42,10 @@ class LiberarUsuario(View):
 
 		if usuario_verificacao:
 			nome = Usuario.objects.get(verificacao =usuario_verificacao)
-			form = FormUsuario(instance= nome)
+			form = FormLiberar(instance= nome)
 			editar=True
 		else:
-			form = FormUsuario()
+			form = FormLiberar()
 			editar=False
 		
 		return render(request, self.template, {'form': form,'editar':editar})
@@ -53,10 +54,9 @@ class LiberarUsuario(View):
 		
 		if usuario_verificacao:
 			nome = Usuario.objects.get(id=usuario_verificacao)
-
-			form = FormUsuario(instance=nome, data=request.POST)
+			form = FormLiberar(instance=nome, data=request.POST)
 		else:
-			form = FormUsuario(request.POST)
+			form = FormLiberar(request.POST)
 		
 
 		if form.is_valid():
