@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.usuario import FormUsuario
 from gestaoapp.models.usuario import Usuario
+from django.core.mail import send_mail
 
 class CadastroUsuario(View):
 
@@ -24,6 +25,7 @@ class CadastroUsuario(View):
 		if usuario_id:
 			nome = Usuario.objects.get(id=usuario_id)
 			form = FormUsuario(instance=nome, data=request.POST)
+			send_mail('Desbloqueio de Conta', '127.0.0.1:8000/liberarconta/'+nome.verificacao+'', 'gestao@fabricadesoftware.edu.ifc.br',[nome.email], fail_silently=False)
 		else:
 			form = FormUsuario(request.POST, request.FILES)
 		if form.is_valid():
