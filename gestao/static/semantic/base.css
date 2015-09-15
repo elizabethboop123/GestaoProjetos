@@ -1,27 +1,7 @@
-.verde{
-		background-color: #289191 !important;
-}
-.d{
+/********************Definições gerais*************************/
 
-	float:right;
-}
-.verde_escuro{
-	background:#267a7a !important;
-	color:#FFFFFF !important;
-}
-.branco{
-	color:#FFFFFF !important;
-}
-.cinza{
-
-	background: #d6d6d6 !important;
-}
-.black{
-	background: #2E2E2E  !important;
-
-}
-.cor{
-	background:#4c0909 !important;
+.direita{
+	float: right;
 }
 
 .ui.grid{
@@ -29,46 +9,60 @@
 	padding:0 !important;
  }
 .cabecalho{
-	min-height: 10%;
+	min-height: 20% !important;
+}
+.cabecalho .grid{
+	margin:0 !important;
+	padding:0 !important;
 }
 .corpo{
-	min-height: 80%;
+	min-height: 63% !important;
 }
 .rodape{
-	min-height: 5%;
+	min-height: 18% !important;
 }
-#icone{
-	margin-top: 2% !important;
-}
-.logout{
-	font-size: 20px;
-}
-.centro{
-	float:center;
-}
-.direita{
-	float: right;
-}
-.sair{
-	float: right;
-}
-.fonte{
-	font-size: 18px;
-}
-.laranja{
-	color: #ec7221;
-}
-.projetos{
-	color:#0e4142;
-}
-.letra{
+.titulo{
 	font-family: Purisa;
 	text-shadow: 0 1px 0 #ccc,
 }
-.menu{
-	margin-top: 0%;
+
+article{
+	margin: 0 !important;
 }
 
+/********************Definições cores*************************/
+
+.cor-fundo{
+		background-color: #289191 !important;
+}
+.verde_escuro{
+	background:#267a7a !important;
+	color:#FFFFFF !important;
+}
+.branco{
+	color:#FFFFFF !important;
+	font-size: 18px;
+}
+.cor-conteudo{
+
+	background: #d6d6d6 !important;
+}
+
+
+
+/********************Definições menu*************************/
+.row-menu{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+
+nav li{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	font-size: 16px !important;
+}
 
 nav ul ul {
 	display: none;
@@ -104,6 +98,7 @@ nav ul li a {
 	padding: 16px 40px;
 	color: #FFFFFF;
 	text-decoration: none;
+	font-size: 16px !important;
 }
 			
 nav ul ul {
@@ -113,7 +108,6 @@ nav ul ul {
 	top: 100%;
 }
 nav ul ul li {
-	float: none;
 	border-top: 1px solid #009491;
 	border-bottom: 1px solid #007D7B;
 	position: relative;
@@ -130,7 +124,13 @@ nav ul ul ul {
 	position: absolute; left: 100%; top:0;
 }
 
-/*.segment{
-	z-index:-1;
 
-}*/
+/********************Definições logout*************************/
+
+.logout{
+	font-size: 20px;
+}
+
+/********************Definições de qualquer coisa que eu nao sei o que é*************************/
+
+
