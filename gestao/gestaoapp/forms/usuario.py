@@ -1,7 +1,8 @@
 from django import forms
 from gestaoapp.models import Usuario
 from django.contrib.auth.models import User
-from random import *
+import random
+
 import string
 
 class FormUsuario(forms.ModelForm):
@@ -47,19 +48,18 @@ class FormUsuario(forms.ModelForm):
 		return email
 
 	def save(self, commit=True):
-		print('oi')
 		self.clean_confirma_senha()
 		usuario = super(FormUsuario, self).save(commit=False)
 		usuario.set_password(self.cleaned_data['password'])
 
-		letras = list(string.ascii_lowercase)
-		ver = []
+		letra = (string.ascii_letters)+(string.digits)
+		l=''
+		
 		for i in range(10):
-			ver.append(random.choice(letras))
+			l += random.choice(letra)
 
-		''.join(ver)
-		print (''.join(ver))
-		usuario.verificacao = (''.join(ver))
+
+		usuario.verificacao = l
 		
 		if commit:
 			usuario.is_active = False

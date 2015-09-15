@@ -1,4 +1,4 @@
-<html>
+<!doctype html>
     <head>
         {% load staticfiles %}
         <meta charset="utf-8"/>
@@ -6,56 +6,71 @@
         <link rel="stylesheet" href="{% static 'semantic/base.css'%}" />
         <title>{%block titulo%}{%endblock%}</title>
     </head>
-    <body class="verde">
+    <body class="cor-fundo">
         <header class="cabecalho">
             <div class="ui grid">
                 <div class="row"> 
                     <div class='five wide column'>
-                        <h1 class="branco letra"><img src="{% static 'semantic/blueprint.png'%}" class="branco"> PROJETOS</h1>
+                        <h1 class="branco titulo">
+                            <img src="{% static 'semantic/blueprint.png'%}" class="branco"> 
+                                PROJETOS
+                        </h1>
                     </div>
                 </div>
-            </div>
-        </header>         
-        <article class"corpo">
-            <div clas="row">
-                {% if user.is_authenticated %}
-                    <div>
+                {% if user.is_authenticated %}  
+                <div class="row row-menu">
                         <nav>
                             <ul>
-                                <li><a href="#">Usuário</a>
+                                <li>
+                                    <a href="#">Usuário</a>
                                     <ul>
-                                        <li><a href="/usuario/cadastro.html" class="item branco"><i class="block layout icon branco"></i>Cadastrar</a></li>
+                                        <li>
+                                            <a href="/usuario/cadastro.html" class="item branco">
+                                                <i class="block layout icon branco"></i>
+                                                Cadastrar
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Horário</a>
+                                <li>
+                                    <a href="#">Horário</a>
                                     <ul>
-                                        <li><a href="/horario/cadastro.html" class="item branco"><i class="user icon branco"></i>Cadastrar</a></li>
+                                        <li>
+                                            <a href="/horario/cadastro.html" class="item branco">
+                                                <i class="user icon branco"></i>
+                                                Cadastrar
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="direita"><a href="/logout"><i class="sign out icon"></i>Sair
-                                 </a></li>
+                                <li class="direita">
+                                    <a href="/logout">
+                                        <i class="sign out icon"></i>Sair
+
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                 {% endif %}
             </div>
-            <div class="ui segment cinza">
-                <div class="ui grid">
-                    <div class="row">
-                        <div class="three wide column"></div>
-                        <div class="ten wide column">       
-                            {%block conteudo%}
-                            {%endblock%}
-                        </div>
+        </header>         
+        <article class="corpo ui segment cor-conteudo">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="three wide column"></div>
+                    <div class="ten wide column">       
+                        {%block conteudo%}
+                        {%endblock%}
                     </div>
                 </div>
             </div>
         </article>
-        <footer class="ui grid">
-            <div class="sixteen wide column">
+        <footer class="ui grid rodape">
+            <div class="sixteen wide column altura">
                 <div class="ui small images verde">
                     <img  id="icone" src="{% static 'semantic/fabrica.png'%}">
-                    <img  class="d" id="icone" src="{% static 'semantic/ifc2.png'%}">
+                    <img  class="direita" id="icone" src="{% static 'semantic/ifc2.png'%}">
                 </div> 
             </div>
         </footer>
