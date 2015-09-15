@@ -2,11 +2,13 @@
 {% block titulo %} Cadastro de Usuário{% endblock %}
 {% block conteudo%} 
 <form method='POST' enctype=" multipart/form-data">
-        {% csrf_token %}           
+        {% csrf_token %}  
+        {{form.erros}}         
         <h1 class="ui header">Cadastro de Usuário</h1>
         <div class="ui large form">
         	<div class="two fields">
 	            <div class="field">
+
 	                <label>Nome</label>
 	                {{form.first_name}}
 	                {% if form.first_name.errors %}
