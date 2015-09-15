@@ -29,7 +29,7 @@ class CadastroUsuario(View):
 		print('AQUI')
 		if form.is_valid():
 			form.save(request)
-			return redirect('/login')
+			return redirect('/sucesso')
 
 		else:
 			return render(request, self.template, {'form': form})

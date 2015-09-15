@@ -14,15 +14,15 @@ class CadastroHorario(LoginRequiredMixin,View):
 
 	def get(self, request, horario_id=None):
 
-		user = Usuario.objects.get(id=request.user.id)
-		user.dia.all
+		# user = Usuario.objects.get(id=request.user.id)
+		# user.dia.all
 
-		for dias in user.dia.all():	
-			print(dias)		
-			for hora in dias:
-				print(hora)
- 				hora.hora_inicio
- 				hora.hora_fim
+		# for dias in user.dia.all():	
+		# 	print(dias)		
+		# 	for hora in dias:
+		# 		print(hora)
+ 	# 			hora.hora_inicio
+ 	# 			hora.hora_fim
 	
 
 
