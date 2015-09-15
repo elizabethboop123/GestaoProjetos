@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.usuario import FormUsuario
 from gestaoapp.models.usuario import Usuario
-from gestaoapp.forms.liberar import FormLiberar
 
 class CadastroUsuario(View):
 
@@ -36,32 +35,14 @@ class CadastroUsuario(View):
 
 class LiberarUsuario(View):
 
-	template = 'usuario/cadastro.html'
+	template = 'usuario/conta_desbloqueada.html'
 
 	def get(self, request, usuario_verificacao = None):
 
 		if usuario_verificacao:
 			nome = Usuario.objects.get(verificacao =usuario_verificacao)
-			form = FormLiberar(instance= nome)
-			editar=True
-		else:
-			form = FormLiberar()
-			editar=False
+			nome.is_active = True
+			nome.save()
+			
 		
-		return render(request, self.template, {'form': form,'editar':editar})
-
-	def post(self, request, usuario_verificacao=None):
-		
-		if usuario_verificacao:
-			nome = Usuario.objects.get(id=usuario_verificacao)
-			form = FormLiberar(instance=nome, data=request.POST)
-		else:
-			form = FormLiberar(request.POST)
-		
-
-		if form.is_valid():
-			form.save(request)
-			return redirect('/login')
-
-		else:
-			return render(request, self.template, {'form': form})
+		return render(request, self.template)
