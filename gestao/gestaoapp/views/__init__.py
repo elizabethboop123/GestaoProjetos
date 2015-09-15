@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from gestaoapp.views.usuario import CadastroUsuario
+from gestaoapp.views.usuario import CadastroUsuario, LiberarUsuario
 from gestaoapp.views.perfil import CadastroPerfil
 from gestaoapp.views.horario import CadastroHorario
 

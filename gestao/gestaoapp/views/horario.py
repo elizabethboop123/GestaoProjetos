@@ -14,33 +14,6 @@ class CadastroHorario(LoginRequiredMixin,View):
 
 	def get(self, request, horario_id=None):
 
-		user = Usuario.objects.get(id=request.user.id)
-		user.dia.all
-
-		for dias in user.dia.all():	
-			print(dias)		
-			for hora in dias:
-				print(hora)
- 				hora.hora_inicio
- 				hora.hora_fim
-	
-
-
-
-		# dia1 = datetime.timedelta(hora_inicio, hora_fim)
-		# dia2 = datetime.timedelta(hora_inicio, hora_fim)
-		# dia3 = datetime.timedelta(hora_inicio, hora_fim)
-		# dia4 = datetime.timedelta(hora_inicio, hora_fim)
-		# dia5 = datetime.timedelta(hora_inicio, hora_fim)
-
-		# tempototal = dia1+dia2+
-
-		# if tempototal >= carga_horaria:
-
-		# if tempototal<carga_horaria:
-			
-
-
 		if horario_id:
 			nome = Horario.objects.get(id=horario_id)
 			form = FormHorario(instance= nome)

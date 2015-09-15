@@ -7,16 +7,16 @@ class CadastroUsuario(View):
 
 	template = 'usuario/cadastro.html'
 
-	def get(self, request, usuario_id=None):
+	def get(self, request , usuario_id = None):
 
 		if usuario_id:
-			nome = Usuario.objects.get(id=usuario_id)
+			nome = Usuario.objects.get(id =usuario_id)
 			form = FormUsuario(instance= nome)
 			editar=True
 		else:
 			form = FormUsuario()
 			editar=False
-		
+
 		return render(request, self.template, {'form': form,'editar':editar})
 
 	def post(self, request, usuario_id=None):
@@ -26,7 +26,39 @@ class CadastroUsuario(View):
 			form = FormUsuario(instance=nome, data=request.POST)
 		else:
 			form = FormUsuario(request.POST, request.FILES)
-		print('AQUI')
+		if form.is_valid():
+			form.save(request)
+			return redirect('/login')
+
+		else:
+			return render(request, self.template, {'form': form})
+
+class LiberarUsuario(View):
+
+	template = 'usuario/cadastro.html'
+
+	def get(self, request, usuario_verificacao = None):
+
+		if usuario_verificacao:
+			nome = Usuario.objects.get(verificacao =usuario_verificacao)
+			form = FormUsuario(instance= nome)
+			editar=True
+		else:
+			form = FormUsuario()
+			editar=False
+		
+		return render(request, self.template, {'form': form,'editar':editar})
+
+	def post(self, request, usuario_verificacao=None):
+		
+		if usuario_verificacao:
+			nome = Usuario.objects.get(id=usuario_verificacao)
+
+			form = FormUsuario(instance=nome, data=request.POST)
+		else:
+			form = FormUsuario(request.POST)
+		
+
 		if form.is_valid():
 			form.save(request)
 			return redirect('/login')
