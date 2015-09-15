@@ -8,3 +8,5 @@ from gestaoapp.views.horario import CadastroHorario
 def sucesso(request):
 	return render(request, 'usuario/sucesso.html')
 
+def cadastro_liberado(request):
+	return render(request, 'usuario/cadastro_liberado.html')
