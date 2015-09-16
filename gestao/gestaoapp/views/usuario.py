@@ -35,33 +35,13 @@ class CadastroUsuario(View):
 
 class LiberarUsuario(View):
 
-	template = 'usuario/cadastro.html'
+	template = 'usuario/conta_desbloqueada.html'
 
 	def get(self, request, usuario_verificacao = None):
 
 		if usuario_verificacao:
 			nome = Usuario.objects.get(verificacao =usuario_verificacao)
-			form = FormUsuario(instance= nome)
-			editar=True
-		else:
-			form = FormUsuario()
-			editar=False
-		
-		return render(request, self.template, {'form': form,'editar':editar})
-
-	def post(self, request, usuario_verificacao=None):
-		
-		if usuario_verificacao:
-			nome = Usuario.objects.get(id=usuario_verificacao)
-
-			form = FormUsuario(instance=nome, data=request.POST)
-		else:
-			form = FormUsuario(request.POST)
-		
-
-		if form.is_valid():
-			form.save(request)
-			return redirect('/sucesso')
-
-		else:
-			return render(request, self.template, {'form': form})
+			nome.is_active = True
+			nome.save()
+			
+		return render(request, self.template)
