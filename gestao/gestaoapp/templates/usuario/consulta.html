@@ -1,0 +1,11 @@
+{% for usuario in usuarios %}							
+	{{ usuario.first_name }}
+	{{ usuario.last_name }}
+	{% for data in usuario.dia.all %}
+ 		{{ data.data}}
+ 		{{data.hora_inicio}}
+ 		{{data.hora_fim}}
+	{% endfor %}
+<br>
+{% endfor %}
+				    

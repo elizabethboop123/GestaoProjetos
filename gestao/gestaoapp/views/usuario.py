@@ -3,6 +3,8 @@ from django.views.generic.base import View
 from gestaoapp.forms.usuario import FormUsuario
 from gestaoapp.models.usuario import Usuario
 from django.core.mail import send_mail
+from gestaoapp.forms.busca import Busca
+from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroUsuario(View):
 
@@ -49,16 +51,22 @@ class LiberarUsuario(View):
 		
 		return render(request, self.template)
 
-class RecuperarSenha(View):
+class ConsultaUsuario(LoginRequiredMixin, View):
 
-	template = 'usuario/conta_desbloqueada.html'
+	template = 'usuario/consulta.html'
+	def get(self, request):
+		form = Busca()
+		usuario = Usuario.objects.all()
 
-	def get(self, request, usuario_email = None):
+		return render(request, self.template, {'usuarios': usuario ,"form": form})
+	
+	def post(self, request):
+		form = Busca(request.POST)
+		if form.is_valid():
+			usuario = Usuario.objects.filter(titulo__icontains=form.cleaned_data['nome'])
 
-		if usuario_verificacao:
-			nome = Usuario.objects.get(email =usuario_email)
-			nome.is_active = True
-			nome.save()
-			
-		
-		return render(request, self.template)
+			return render(request, self.template, {'usuarios': usuario, 'form':form})
+		else:
+			form = Busca(request.POST)				
+			usuario = Usuario.objects.all()
+		return render(request, self.template, {'usuarios': usuario,"form": form})

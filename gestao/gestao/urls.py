@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^usuario/', CadastroUsuario.as_view()),
     url(r'^editar_usuario/(?P<usuario_id>\d+)/$', CadastroUsuario.as_view()),
     url(r'^liberar_usuario/(?P<usuario_verificacao>\w+)/$', LiberarUsuario.as_view()),
+    url(r'^consulta_usuario/', ConsultaUsuario.as_view()),
 
     url(r'^perfil/', CadastroPerfil.as_view()),
     url(r'^editarperfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),
