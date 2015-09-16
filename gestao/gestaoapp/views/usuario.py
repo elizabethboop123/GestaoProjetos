@@ -25,9 +25,9 @@ class CadastroUsuario(View):
 		if usuario_id:
 			nome = Usuario.objects.get(id=usuario_id)
 			form = FormUsuario(instance=nome, data=request.POST)
-			send_mail('Desbloqueio de Conta', '127.0.0.1:8000/liberarconta/'+nome.verificacao+'', 'gestao@fabricadesoftware.edu.ifc.br',[nome.email], fail_silently=False)
 		else:
 			form = FormUsuario(request.POST, request.FILES)
+
 		if form.is_valid():
 			form.save(request)
 			return redirect('/login')
@@ -43,6 +43,20 @@ class LiberarUsuario(View):
 
 		if usuario_verificacao:
 			nome = Usuario.objects.get(verificacao =usuario_verificacao)
+			nome.is_active = True
+			nome.save()
+			
+		
+		return render(request, self.template)
+
+class RecuperarSenha(View):
+
+	template = 'usuario/conta_desbloqueada.html'
+
+	def get(self, request, usuario_email = None):
+
+		if usuario_verificacao:
+			nome = Usuario.objects.get(email =usuario_email)
 			nome.is_active = True
 			nome.save()
 			

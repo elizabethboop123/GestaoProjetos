@@ -2,6 +2,7 @@ from django import forms
 from gestaoapp.models import Usuario
 from django.contrib.auth.models import User
 import random
+from django.core.mail import send_mail
 
 import string
 
@@ -47,6 +48,9 @@ class FormUsuario(forms.ModelForm):
 			raise forms.ValidationError(u'Email ja cadastrado')
 		return email
 
+	def manda_email(self, usuario):
+		send_mail('Desbloqueio de Conta', 'http://192.52.62.30:8000/liberar_usuario/'+usuario.verificacao+'', 'gestao@fabricadesoftware.edu.ifc.br',[usuario.email], fail_silently=False)
+
 	def save(self, commit=True):
 		self.clean_confirma_senha()
 		usuario = super(FormUsuario, self).save(commit=False)
@@ -64,6 +68,7 @@ class FormUsuario(forms.ModelForm):
 		if commit:
 			usuario.is_active = False
 			usuario.save()
+			self.manda_email(usuario)
 
 		return usuario
 
