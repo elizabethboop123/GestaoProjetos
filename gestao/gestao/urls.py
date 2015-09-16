@@ -24,7 +24,7 @@ urlpatterns = [
 
     url(r'^cadastro_liberado/', cadastro_liberado),
 
-    url(r'^troca_senha/$', 'django.contrib.auth.views.password_change',{'template_name': 'troca.html'}),
+    url(r'^troca_senha/$', 'django.contrib.auth.views.password_change',{'template_name': 'usuario/troca.html'}),
     url(r'^sucesso_senha/$', CadastroUsuario.as_view(), name='password_change_done')
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
