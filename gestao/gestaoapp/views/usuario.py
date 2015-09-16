@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.usuario import FormUsuario
 from gestaoapp.models.usuario import Usuario
+from django.core.mail import send_mail
 
 class CadastroUsuario(View):
 
@@ -26,6 +27,7 @@ class CadastroUsuario(View):
 			form = FormUsuario(instance=nome, data=request.POST)
 		else:
 			form = FormUsuario(request.POST, request.FILES)
+
 		if form.is_valid():
 			form.save(request)
 			return redirect('/login')
@@ -41,6 +43,20 @@ class LiberarUsuario(View):
 
 		if usuario_verificacao:
 			nome = Usuario.objects.get(verificacao =usuario_verificacao)
+			nome.is_active = True
+			nome.save()
+			
+		
+		return render(request, self.template)
+
+class RecuperarSenha(View):
+
+	template = 'usuario/conta_desbloqueada.html'
+
+	def get(self, request, usuario_email = None):
+
+		if usuario_verificacao:
+			nome = Usuario.objects.get(email =usuario_email)
 			nome.is_active = True
 			nome.save()
 			
