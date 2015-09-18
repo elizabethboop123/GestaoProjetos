@@ -133,4 +133,16 @@ nav ul ul ul {
 
 /********************Definições de qualquer coisa que eu nao sei o que é*************************/
 
+.ui.pointing.label{
+	font-size: 100%;
+	padding:0%;
+}
+ul{
+	list-style: none;
+	padding:0;
+	margin:0;
 
+}
+li{
+	padding: 10px;
+}
