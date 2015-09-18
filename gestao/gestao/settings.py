@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gestaoapp',
-    # 'axes',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # 'axes.middleware.FailedLoginMiddleware'
+
 )
 
 ROOT_URLCONF = 'gestao.urls'

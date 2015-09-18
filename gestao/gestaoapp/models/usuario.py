@@ -17,6 +17,7 @@ class Usuario(User):
 	perfil = models.ForeignKey(Perfil, null=True, blank=True)
 	dia = models.ManyToManyField(Horario, blank=True)
 	verificacao=models.CharField(max_length=255,null=True, blank=True, unique = True)
+	verificado = models.BooleanField()
 
 	def __unicode__(self):
 		return self.first_name

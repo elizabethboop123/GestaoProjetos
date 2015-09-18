@@ -49,7 +49,7 @@ class FormUsuario(forms.ModelForm):
 		return email
 
 	def manda_email(self, usuario):
-		send_mail('Desbloqueio de Conta', 'http://191.52.62.32:8080/liberar_usuario/'+usuario.verificacao+'', 'gestao@fabricadesoftware.ifc.edu.br',[usuario.email], fail_silently=False)
+		send_mail('Desbloqueio de Conta', 'http://191.52.62.32:8080/verificar_usuario/'+usuario.verificacao+'', 'gestao@fabricadesoftware.ifc.edu.br',[usuario.email], fail_silently=False)
 
 	def save(self, commit=True):
 		self.clean_confirma_senha()
@@ -67,6 +67,7 @@ class FormUsuario(forms.ModelForm):
 		
 		if commit:
 			usuario.is_active = False
+			usuario.verificado	= False
 			usuario.save()
 			self.manda_email(usuario)
 
@@ -74,4 +75,4 @@ class FormUsuario(forms.ModelForm):
 
 	class Meta:
 		model = Usuario
-		exclude = ('last_login',"groups","user_permissions","helptext","is_staff","date_joined",'is_active','dia','mail','verificacao') 
+		exclude = ('last_login',"groups","user_permissions","helptext","is_staff","date_joined",'is_active','dia','mail','verificacao', 'verificado') 

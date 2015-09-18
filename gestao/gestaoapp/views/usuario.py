@@ -37,7 +37,20 @@ class CadastroUsuario(View):
 		else:
 			return render(request, self.template, {'form': form})
 
-class LiberarUsuario(View):
+class VerificarUsuario(View):
+
+	template = 'usuario/conta_desbloqueada.html'
+
+	def get(self, request, usuario_verificacao = None):
+
+		if usuario_verificacao:
+			nome = Usuario.objects.get(verificacao =usuario_verificacao)
+			nome.verificado = True
+			nome.save()
+			
+		return render(request, self.template)
+
+class LiberarUsuario(LoginRequiredMixin,View):
 
 	template = 'usuario/conta_desbloqueada.html'
 
@@ -48,8 +61,8 @@ class LiberarUsuario(View):
 			nome.is_active = True
 			nome.save()
 			
-		
 		return render(request, self.template)
+
 
 class ConsultaUsuario(LoginRequiredMixin, View):
 

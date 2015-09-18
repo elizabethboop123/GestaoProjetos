@@ -2,6 +2,7 @@
 {{% extends 'base.html'%}
 {% block titulo %} Consulta Usuario{% endblock %}
 {% block conteudo%} 
+{% if user.is_superuser %}
 <div class="ui segment margim">
  	<div class="ui grid">
         <div class="three wide column"></div>
@@ -15,23 +16,23 @@
 				<table class="ui celled table">
 					<thead>
 						<tr>
-						    <th>Usuarios</th>
-						    <th>Horarios</th>
-						    <th></th>
-						    <th></th>
-						    <th></th>
-						    <th></th>
+						    <th>Nome</th>
+						    <th>Desbloqueado</th>
+						    <th>Usuario</th>
+						    <th>Verificado</th>
+						    <th>Codigo</th>
 						</tr>	
 					</thead>
 					<tbody>
 						{% for usuario in usuarios %}
 					    <tr>	 
-						   	<td>{{ usuario.first_name }} {{ usuario.last_name }}</td>
-						   	{% for data in usuario.dia.all %}
- 								<td>{{ data.data}}
- 								{{data.hora_inicio}}
- 								{{data.hora_fim}}</td>
-							{% endfor %}
+						   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
+						   	<td>{{usuario.is_active}}</td>
+						   	<td>{{usuario.username}}</td>
+						   	<td>{{usuario.verificado}}</td>
+						   	{% if user.is_superuser %}   	 
+						   	<td><a href="http://127.0.0.1:8080/liberar_usuario/{{usuario.verificacao}}"><i class="remove icon red large"></i>link text</a></td>
+						   	{%endif%}
 					    </tr>
 			    		{% endfor %}
 					</tbody>
@@ -41,4 +42,6 @@
 	</div>
 </div>	
 
+{%endif%}
+	Somente Administrador
 {%endblock%}

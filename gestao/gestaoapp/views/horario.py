@@ -14,6 +14,7 @@ class CadastroHorario(LoginRequiredMixin,View):
 
 	def get(self, request, horario_id=None):
 
+
 		if horario_id:
 			nome = Horario.objects.get(id=horario_id)
 			form = FormHorario(instance= nome)
