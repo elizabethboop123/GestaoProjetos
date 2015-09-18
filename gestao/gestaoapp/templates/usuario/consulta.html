@@ -1,11 +1,44 @@
-{% for usuario in usuarios %}							
-	{{ usuario.first_name }}
-	{{ usuario.last_name }}
-	{% for data in usuario.dia.all %}
- 		{{ data.data}}
- 		{{data.hora_inicio}}
- 		{{data.hora_fim}}
-	{% endfor %}
-<br>
-{% endfor %}
-				    
+
+{{% extends 'base.html'%}
+{% block titulo %} Consulta Usuario{% endblock %}
+{% block conteudo%} 
+<div class="ui segment margim">
+ 	<div class="ui grid">
+        <div class="three wide column"></div>
+        <div class="ten wide column"> 
+			<h2 class=" ui header">Consulta Usuario</h2>
+			<form method='POST' action='/ConsultaLivro/' class="ui form">
+             	{% csrf_token %}
+             	<div class="ui field">
+				</div>
+			</form>
+				<table class="ui celled table">
+					<thead>
+						<tr>
+						    <th>Usuarios</th>
+						    <th>Horarios</th>
+						    <th></th>
+						    <th></th>
+						    <th></th>
+						    <th></th>
+						</tr>	
+					</thead>
+					<tbody>
+						{% for usuario in usuarios %}
+					    <tr>	 
+						   	<td>{{ usuario.first_name }} {{ usuario.last_name }}</td>
+						   	{% for data in usuario.dia.all %}
+ 								<td>{{ data.data}}
+ 								{{data.hora_inicio}}
+ 								{{data.hora_fim}}</td>
+							{% endfor %}
+					    </tr>
+			    		{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>	
+
+{%endblock%}
