@@ -1,5 +1,5 @@
 
-{{% extends 'base.html'%}
+{% extends 'base.html'%}
 {% block titulo %} Consulta Usuario{% endblock %}
 {% block conteudo%} 
 {% if user.is_superuser %}
@@ -27,12 +27,18 @@
 						{% for usuario in usuarios %}
 					    <tr>	 
 						   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
-						   	<td>{{usuario.is_active}}</td>
+						   	{% if usuario.is_active %} 
+						   	<td><i class="checkmark green large icon"></i></td>
+						   	{% else %}
+						   	<td><i class="remove red large icon"></i></td>
+						   	{% endif %}
 						   	<td>{{usuario.username}}</td>
-						   	<td>{{usuario.verificado}}</td>
-						   	{% if user.is_superuser %}   	 
-						   	<td><a href="http://127.0.0.1:8080/liberar_usuario/{{usuario.verificacao}}"><i class="remove icon red large"></i>link text</a></td>
-						   	{%endif%}
+						   	{% if usuario.verificado %} 
+						   	<td><i class="checkmark green large icon"></i></td>
+						   	{% else %}
+						   	<td><i class="remove red large icon"></i></td>
+						   	{% endif %} 
+						   	<td><a href="http://127.0.0.1:8080/liberar_usuario/{{usuario.verificacao}}">Desbloquear</a></td>
 					    </tr>
 			    		{% endfor %}
 					</tbody>
@@ -41,7 +47,15 @@
 		</div>
 	</div>
 </div>	
-
+{%else%}
+	<div class='ui centered grid'>
+	<div class='two column centered row'>
+		<div class='ui column centered'>
+			<div class='ui centered'>
+				<h2 class='ui header centered'>Acesso bloqueado, somente administrador.</h2>
+			</div>
+		</div>
+	</div>
+</div>
 {%endif%}
-	Somente Administrador
 {%endblock%}
