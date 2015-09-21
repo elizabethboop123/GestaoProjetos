@@ -8,7 +8,6 @@
         <div class="ui large form">
         	<div class="two fields">
 	            <div class="field">
-
 	                <label>Nome</label>
 	                {{form.first_name}}
 	                {% if form.first_name.errors %}
@@ -27,17 +26,23 @@
 	                {% endif %}
 	            </div>
 	        </div>
-            <div class="three fields">
-            	<div class="field">
+            <div class="three fields tres">
+            	<div class="field vinculopai">
 	                <label>Vínculo Institucional</label>
-	                {{form.vinculo_institucional}}
+	                <!-- {{form.vinculo_institucional}}
 	                {% if form.vinculo_institucional.errors %}
 	                 	<div class="ui red pointing label">
 	                    	{{ form.vinculo_institucional.errors }}
 	                 	</div>
-	                {% endif %}
+	                {% endif %} -->
+	                <select class="vinculo">
+	                	<option value='null'> Selecione </option>
+	                	<option value='Aluno'> Aluno </option>
+	                	<option value='Professor'> Professor </option>
+	                	
+	                </select>
 	            </div>
-	            <div class="field">
+	            <div class="field curso">
 	                <label>Curso</label>
 	                {{form.curso}}
 	                {% if form.curso.errors %}
@@ -46,7 +51,7 @@
 	                 	</div>
 	                {% endif %}
 	            </div>
-	            <div class="field">
+	            <div class="field periodo">
 	               	<label>Período</label>
 	                {{form.periodo}}
 	                {% if form.periodo.errors %}
@@ -58,7 +63,7 @@
 	        </div> 
 	        <div class="two fields">
 	           	<div class="field">
-		            <label>Matrícula</label>
+		            <label class="matricula">Matrícula</label>
 		            {{form.matricula}}
 		            {% if form.matricula.errors %}
 		                <div class="ui red pointing label">
