@@ -28,15 +28,15 @@
 					    <tr>	 
 						   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
 						   	{% if usuario.is_active %} 
-						   	<td><i class="checkmark green large icon"></i></td>
+						   	<td class="centro"><i class="checkmark green large icon"></i></td>
 						   	{% else %}
-						   	<td><i class="remove red large icon"></i></td>
+						   	<td class="centro"><i class="remove red large icon"></i></td>
 						   	{% endif %}
 						   	<td>{{usuario.username}}</td>
 						   	{% if usuario.verificado %} 
-						   	<td><i class="checkmark green large icon"></i></td>
+						   	<td class="centro"><i class="checkmark green large icon"></i></td>
 						   	{% else %}
-						   	<td><i class="remove red large icon"></i></td>
+						   	<td class="centro"><i class="remove red large icon"></i></td>
 						   	{% endif %} 
 						   	<td><a href="http://127.0.0.1:8080/liberar_usuario/{{usuario.verificacao}}">Desbloquear</a></td>
 					    </tr>
