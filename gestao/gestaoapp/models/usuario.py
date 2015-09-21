@@ -14,7 +14,7 @@ class Usuario(User):
 	telefone2 = models.CharField(max_length=11, blank=True, null=True)
 	vinculo_institucional = models.ForeignKey(Vinculo)
 	curso = models.CharField(max_length=255)
-	periodo =models.CharField(max_length=255)
+	periodo =models.CharField(max_length=255,null=True, blank=True)
 	perfil = models.ForeignKey(Perfil, null=True, blank=True)
 	dia = models.ManyToManyField(Horario, blank=True)
 	verificacao=models.CharField(max_length=255,null=True, blank=True, unique = True)
