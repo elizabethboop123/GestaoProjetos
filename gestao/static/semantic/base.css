@@ -1,5 +1,7 @@
 /********************Definições gerais*************************/
-
+.centro{
+	padding-left:8% !important;
+}
 .direita{
 	float: right;
 }
