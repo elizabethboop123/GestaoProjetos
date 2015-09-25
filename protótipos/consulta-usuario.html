@@ -12,7 +12,7 @@
 				<div class="ui top attached button"></div>
             </header>
             <article>
-                <nav class="ui center aligned grid">
+                 <nav class="ui center aligned grid">
                     <div class="column">
                         <div class="ui red inverted menu">
                             <a href="cadastra-usuario.html" class="item">
@@ -21,6 +21,15 @@
                             <a href="cadastra-horario.html" class="item">
                                 Cadastro de Horário
                             </a>
+                            <a href="cadastra-nucleo.html" class="item">
+                                Cadastro de Núcleo
+                            </a>
+                            <a href="cadastra-recursos.html" class="item">
+                                Cadastro de Recursos
+                            </a>
+                            <a href="cadastra-artefatos.html" class="item">
+                                Cadastro de Artefatos
+                            </a>
                         </div>
                     </div>
                 </nav>
@@ -28,23 +37,34 @@
                     <div class="ui grid">
                         <div class="three wide column"></div>
                         <div class="ten wide column"> 
-                            <h2 class=" ui header">Consulta Usuario</h2>
-                                <table class="ui celled table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Desbloqueado</th>
-                                            <th>Usuário</th>
-                                            <th>Verificado</th>
-                                            <th>Codigo</th>
-                                        </tr>	
-                                    </thead>
-                                </table>
+                            <h2 class=" ui header">Consulta Usuário</h2>
+                            <div class="ui fluid action input">
+                              <input type="text" placeholder="Buscar...">
+                              <div class="ui button">Buscar</div>
                             </div>
+                             <table class="ui celled table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Desbloqueado</th>
+                                        <th>Usuário</th>
+                                        <th>Verificado</th>
+                                        <th>Codigo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Patrick</td>
+                                        <td class="positive"><i class="icon close"></i> Requisitado</td>
+                                        <td class="positive">patrick.reis</td>
+                                        <td class="negative">Não</td>
+                                        <td class="positive">98787</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>	
-            </div>
+                </div>
             </article>
             <footer class="ui segment">
                 <div class="ui grid">
