@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
-from gestaoapp.forms.usuario import FormNucleo
+from gestaoapp.forms.nucleo import FormNucleo
 from gestaoapp.models.nucleo import Nucleo
+from gestaoapp.models.usuario import Usuario
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroNucleo(LoginRequiredMixin,View):
@@ -9,7 +10,6 @@ class CadastroNucleo(LoginRequiredMixin,View):
 	template = 'nucleo/cadastro.html'
 
 	def get(self, request, nucleo_id=None):
-
 
 		if nucleo_id:
 			nome = Horario.objects.get(id=nucleo_id)
