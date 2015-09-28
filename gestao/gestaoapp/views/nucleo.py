@@ -12,7 +12,7 @@ class CadastroNucleo(LoginRequiredMixin,View):
 	def get(self, request, nucleo_id=None):
 
 		if nucleo_id:
-			nome = Horario.objects.get(id=nucleo_id)
+			nome = Nucleo.objects.get(id=nucleo_id)
 			form = FormNucleo(instance= nome)
 			editar=True
 		else:
@@ -24,7 +24,7 @@ class CadastroNucleo(LoginRequiredMixin,View):
 	def post(self, request, nucleo_id=None):
 		
 		if nucleo_id:
-			nome = Horario.objects.get(id=nucleo_id)
+			nome = Nucleo.objects.get(id=nucleo_id)
 			form = FormNucleo(instance=nome, data=request.POST)
 		else:
 
@@ -32,10 +32,7 @@ class CadastroNucleo(LoginRequiredMixin,View):
 			
 		if form.is_valid():
 			dia = form.save(request)
-			user = Usuario.objects.get(id=request.user.id)
-			user.dia.add(dia)
-
-			return redirect('/horario')
+			return redirect('/')
 
 		else:
 			return render(request, self.template, {'form': form})
