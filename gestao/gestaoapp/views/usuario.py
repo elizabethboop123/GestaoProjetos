@@ -67,7 +67,7 @@ class LiberarUsuario(LoginRequiredMixin,View):
 
 class AdministrarUsuario(LoginRequiredMixin, View):
 
-	template = 'usuario/consulta.html'
+	template = 'usuario/desbloquear.html'
 	def get(self, request):
 		form = Busca()
 		usuario = Usuario.objects.all()
@@ -97,10 +97,30 @@ class ConsultaUsuario(LoginRequiredMixin, View):
 	def post(self, request):
 		form = Busca(request.POST)
 		if form.is_valid():
-			usuario = Usuario.objects.filter(titulo__icontains=form.cleaned_data['nome'])
+			usuario = Usuario.objects.filter(first_name__icontains=form.cleaned_data['nome'])
 
 			return render(request, self.template, {'usuarios': usuario, 'form':form})
 		else:
 			form = Busca(request.POST)				
 			usuario = Usuario.objects.all()
 		return render(request, self.template, {'usuarios': usuario,"form": form})
+
+class VisualizarUsuario(LoginRequiredMixin, View):
+	
+	template = "usuario/visualizar.html"
+	
+	def get(self, request, usuario_id=None):
+		
+		if usuario_id:
+			usuario = Usuario.objects.get(id=usuario_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'usuario': usuario})
+	
+	def post(self, request):
+		
+		return render(request, self.template)
+
+

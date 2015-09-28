@@ -15,6 +15,9 @@ urlpatterns = [
     url(r'^verificar_usuario/(?P<usuario_verificacao>\w+)/$', VerificarUsuario.as_view()),
     url(r'^desbloquear_usuario/', AdministrarUsuario.as_view()),
     url(r'^liberar_usuario/(?P<usuario_verificacao>\w+)/$', LiberarUsuario.as_view()),
+    url(r'^consulta_usuario/', ConsultaUsuario.as_view()),
+    url(r'^visualizar_usuario/(?P<usuario_id>\d+)/$', VisualizarUsuario.as_view()),
+
 
     url(r'^perfil/', CadastroPerfil.as_view()),
     url(r'^editarperfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),

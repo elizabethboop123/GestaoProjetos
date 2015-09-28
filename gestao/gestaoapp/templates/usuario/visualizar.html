@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+{% block titulo %} 	 Visualizar Usuário {% endblock %}
+{% block conteudo %}
+<div class="ui margim">
+	<div class="ui grid" method="POST">
+		{% csrf_token %}
+		<div class="row">
+			<div class="three wide column"></div>
+			<div class="ten wide column">       
+				<div class="ui form">
+					<h2 class="ui header">
+			            Informações do Usuário
+			        </h2>
+				</div>
+					<div class="ui segment form">
+						<div class="two fields">
+							<div class="field">
+								<label>Nome</label>
+								{{ usuario.first_name }}
+							</div>
+							<div class="field">
+								<label>Sobrenome</label>
+								{{usuario.last_name}}
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>Vínculo Institucional</label>
+								{{usuario.vinculo_institucional}}
+							</div>
+							<div class="field">
+								<label>Matrícula</label>
+									{{usuario.matricula}}
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>Curso</label>
+								{{usuario.curso}}
+							</div>
+							<div class="field">
+								<label>Período</label>
+								{{usuario.periodo}}
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>Carga Horaria</label>
+								{{usuario.carga_horaria}}
+							</div>
+							<div class="field">
+								<label>Telefone</label>
+								{{usuario.telefone}}
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>E-mail</label>
+								{{usuario.email}}
+							</div>
+							<div class="field">
+								<label>E-mail Opcional</label>
+								{{usuario.email_opcional}}
+							</div>
+						</div>
+						
+					</div>
+					<a href='/consulta_usuario/'><input type="submit" class="ui button direita verde_escuro" value="Voltar"></a>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+
+{% endblock %}
