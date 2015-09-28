@@ -28,6 +28,7 @@ class CadastroUsuario(View):
 			nome = Usuario.objects.get(id=usuario_id)
 			form = FormUsuario(instance=nome, data=request.POST)
 		else:
+			print(request.FILES)
 			form = FormUsuario(request.POST, request.FILES)
 
 		if form.is_valid():
@@ -63,6 +64,26 @@ class LiberarUsuario(LoginRequiredMixin,View):
 			
 		return render(request, self.template)
 
+
+class AdministrarUsuario(LoginRequiredMixin, View):
+
+	template = 'usuario/consulta.html'
+	def get(self, request):
+		form = Busca()
+		usuario = Usuario.objects.all()
+
+		return render(request, self.template, {'usuarios': usuario ,"form": form})
+	
+	def post(self, request):
+		form = Busca(request.POST)
+		if form.is_valid():
+			usuario = Usuario.objects.filter(titulo__icontains=form.cleaned_data['nome'])
+
+			return render(request, self.template, {'usuarios': usuario, 'form':form})
+		else:
+			form = Busca(request.POST)				
+			usuario = Usuario.objects.all()
+		return render(request, self.template, {'usuarios': usuario,"form": form})
 
 class ConsultaUsuario(LoginRequiredMixin, View):
 

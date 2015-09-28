@@ -7,14 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gestaoapp', '0013_usuario_verificacao'),
+        ('gestaoapp', '0001_initial'),
     ]
 
     operations = [
-        migrations.AddField(
+        migrations.AlterField(
             model_name='usuario',
-            name='verificado',
-            field=models.BooleanField(default=1),
-            preserve_default=False,
+            name='foto',
+            field=models.ImageField(null=True, upload_to=b'', blank=True),
         ),
     ]

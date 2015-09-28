@@ -24,10 +24,10 @@ class Migration(migrations.Migration):
             name='Horario',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('dia', models.CharField(max_length=255)),
                 ('hora_inicio', models.TimeField()),
                 ('hora_fim', models.TimeField()),
                 ('turno', models.CharField(max_length=255)),
+                ('data', models.ForeignKey(to='gestaoapp.Dia')),
             ],
         ),
         migrations.CreateModel(
@@ -41,17 +41,19 @@ class Migration(migrations.Migration):
             name='Usuario',
             fields=[
                 ('user_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
-                ('email_opcional', models.EmailField(max_length=254)),
-                ('matricula', models.CharField(max_length=255)),
-                ('foto', models.ImageField(upload_to=b'')),
+                ('email_opcional', models.EmailField(max_length=254, null=True, blank=True)),
+                ('matricula', models.CharField(unique=True, max_length=255)),
+                ('foto', models.ImageField(upload_to=b'imagem/')),
                 ('carga_horaria', models.IntegerField()),
                 ('telefone1', models.CharField(max_length=11)),
-                ('telefone2', models.CharField(max_length=11)),
-                ('vinculo_institucional', models.CharField(max_length=255)),
-                ('curso', models.CharField(max_length=255)),
-                ('periodo', models.CharField(max_length=255)),
-                ('dia', models.ManyToManyField(to='gestaoapp.Horario')),
-                ('perfil', models.ForeignKey(to='gestaoapp.Perfil')),
+                ('telefone2', models.CharField(max_length=11, null=True, blank=True)),
+                ('vinculo_institucional', models.CharField(max_length=255, null=True, blank=True)),
+                ('curso', models.CharField(max_length=255, null=True, blank=True)),
+                ('periodo', models.CharField(max_length=255, null=True, blank=True)),
+                ('verificacao', models.CharField(max_length=255, unique=True, null=True, blank=True)),
+                ('verificado', models.BooleanField()),
+                ('dia', models.ManyToManyField(to='gestaoapp.Horario', blank=True)),
+                ('perfil', models.ForeignKey(blank=True, to='gestaoapp.Perfil', null=True)),
             ],
             options={
                 'abstract': False,
@@ -61,6 +63,13 @@ class Migration(migrations.Migration):
             bases=('auth.user',),
             managers=[
                 ('objects', django.contrib.auth.models.UserManager()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Vinculo',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('vinculo', models.CharField(max_length=255)),
             ],
         ),
     ]
