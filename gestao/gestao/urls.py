@@ -30,7 +30,11 @@ urlpatterns = [
     url(r'^cadastro_liberado/', cadastro_liberado),
 
     url(r'^troca_senha/$', 'django.contrib.auth.views.password_change',{'template_name': 'troca.html'}),
-    url(r'^sucesso_senha/$', CadastroUsuario.as_view(), name='password_change_done')
+    url(r'^sucesso_senha/$', CadastroUsuario.as_view(), name='password_change_done'),
+
+    url(r'^nucleo/', CadastroNucleo.as_view()),
+
+
     # url(r'^recursos/$', 'django.contrib.auth.views.password_change',{'template_name': 'recursos.html'}),
     # url(r'^artefatos/$', 'django.contrib.auth.views.password_change',{'template_name': 'artefatos.html'}),
     # url(r'^nucleo/$', 'django.contrib.auth.views.password_change',{'template_name': 'nucleo.html'}),

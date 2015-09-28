@@ -4,34 +4,38 @@ from gestaoapp.forms.usuario import FormNucleo
 from gestaoapp.models.nucleo import Nucleo
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroNucleo(View):
+class CadastroNucleo(LoginRequiredMixin,View):
 
-	template = 'usuario/cadastro.html'
+	template = 'nucleo/cadastro.html'
 
-	def get(self, request , nucleo_id = None):
+	def get(self, request, nucleo_id=None):
+
 
 		if nucleo_id:
-			nome = Usuario.objects.get(id =nucleo_id)
+			nome = Horario.objects.get(id=nucleo_id)
 			form = FormNucleo(instance= nome)
 			editar=True
 		else:
 			form = FormNucleo()
 			editar=False
-
+		
 		return render(request, self.template, {'form': form,'editar':editar})
 
 	def post(self, request, nucleo_id=None):
 		
 		if nucleo_id:
-			nome = Usuario.objects.get(id=nucleo_id)
+			nome = Horario.objects.get(id=nucleo_id)
 			form = FormNucleo(instance=nome, data=request.POST)
 		else:
-			print(request.FILES)
-			form = FormNucleo(request.POST, request.FILES)
 
+			form = FormNucleo(request.POST)
+			
 		if form.is_valid():
-			form.save(request)
-			return redirect('/sucesso')
+			dia = form.save(request)
+			user = Usuario.objects.get(id=request.user.id)
+			user.dia.add(dia)
+
+			return redirect('/horario')
 
 		else:
 			return render(request, self.template, {'form': form})
