@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gestaoapp', '0005_auto_20150908_1713'),
+        ('gestaoapp', '0003_auto_20150922_1748'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='usuario',
             name='foto',
-            field=models.FileField(null=True, upload_to=b'', blank=True),
+            field=models.ImageField(upload_to=b'imagens', verbose_name=b'Imagem'),
         ),
     ]
