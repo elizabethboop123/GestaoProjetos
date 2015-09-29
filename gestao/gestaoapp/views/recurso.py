@@ -26,11 +26,11 @@ class CadastroRecurso(LoginRequiredMixin,View):
 			nome = Recurso.objects.get(id=recurso_id)
 			form = FormRecurso(instance=nome, data=request.POST)
 		else:
-
 			form = FormRecurso(request.POST)
 			
 		if form.is_valid():
+			form.save(request)
 			return redirect('/recurso')
-
 		else:
 			return render(request, self.template, {'form': form})
+

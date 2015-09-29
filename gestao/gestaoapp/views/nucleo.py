@@ -27,11 +27,9 @@ class CadastroNucleo(LoginRequiredMixin,View):
 			nome = Nucleo.objects.get(id=nucleo_id)
 			form = FormNucleo(instance=nome, data=request.POST)
 		else:
-
 			form = FormNucleo(request.POST)
 			
 		if form.is_valid():
-			dia = form.save(request)
 			return redirect('/')
 
 		else:
