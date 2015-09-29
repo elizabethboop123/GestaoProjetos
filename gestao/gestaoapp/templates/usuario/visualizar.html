@@ -63,7 +63,28 @@
 							{{usuario.email_opcional}}
 						</div>
 					</div>
-				</div>
+					
+					<div class="field">
+						<label>Horário de Trabalho</label>
+						<table class="ui celled table">
+							<thead>
+								<tr>
+									<th>Dia da Semana</th>
+									<th>Início</th>
+									<th>Termino</th>
+								</tr>
+							</thead>
+							{% for data in usuario.dia.all %} 
+							<tbody>
+								<td>{{data.data}}</td>
+								<td>{{data.hora_inicio}}</td>
+ 								<td>{{data.hora_fim}}</td>
+ 							</tbody>
+ 							{%endfor%}
+ 						</table>
+ 						
+					</div>
+						
 				<a href='/consulta_usuario/'><input type="submit" class="ui button direita verde_escuro" value="Voltar"></a>
 			</div>
 		</div>	
