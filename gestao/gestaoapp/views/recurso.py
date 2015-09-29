@@ -30,8 +30,7 @@ class CadastroRecurso(LoginRequiredMixin,View):
 			form = FormRecurso(request.POST)
 			
 		if form.is_valid():
-			dia = form.save(request)
-			return redirect('/')
+			return redirect('/recurso')
 
 		else:
 			return render(request, self.template, {'form': form})
