@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.recurso import FormRecurso
 from gestaoapp.models.recurso import Recurso
-from gestaoapp.models.usuario import Usuario
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroRecurso(LoginRequiredMixin,View):
