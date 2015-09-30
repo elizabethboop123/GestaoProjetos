@@ -3,11 +3,11 @@
 {% block titulo %} Consulta Usuario{% endblock %}
 {% block conteudo%} 
 {% if user.is_superuser %}
-<div class="ui segment margim">
+<div class="ui margim">
  	<div class="ui grid">
         <div class="three wide column"></div>
         <div class="ten wide column"> 
-			<h2 class=" ui header">Administrar Usuarios</h2>
+			<h2 class=" ui header">Administrar Usuários</h2>
 			<form method='POST' action='/ConsultaLivro/' class="ui form">
              	{% csrf_token %}
              	<div class="ui field">
@@ -30,13 +30,13 @@
 						   	{% if usuario.is_active %} 
 						   	<td class="centro"><i class="checkmark green large icon"></i></td>
 						   	{% else %}
-						   	<td class="centro"><i class="remove red large icon"></i></td>
+						   	<td class="centro"><i class="remove icone_red large icon"></i></td>
 						   	{% endif %}
 						   	<td>{{usuario.username}}</td>
 						   	{% if usuario.verificado %} 
 						   	<td class="centro"><i class="checkmark green large icon"></i></td>
 						   	{% else %}
-						   	<td class="centro"><i class="remove red large icon"></i></td>
+						   	<td class="centro"><i class="remove icone_red large icon"></i></td>
 						   	{% endif %} 
 						   	<td><a href="http://127.0.0.1:8080/liberar_usuario/{{usuario.verificacao}}">Desbloquear</a></td>
 					    </tr>

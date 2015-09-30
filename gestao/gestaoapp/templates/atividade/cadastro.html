@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Atividades{% endblock %}
+{% block conteudo%}
+<form method='POST' enctype=" multipart/form-data">
+        {% csrf_token %}           
+        <h1 class="ui header">Cadastro de atividades</h1>
+        <div class="ui large form">
+	        <div class="two fields">
+			    <div class="field">
+			        <label>Nome da atividade</label>
+			        {{form.nome}}
+			        {% if form.nome.errors %}
+			        	<div class="ui red pointing label">
+			            	{{ form.nome.errors }}
+			            </div>
+			        {% endif %}
+			    </div>
+			    <div class="field">
+			        <label>Descrição</label>
+			        {{form.descricao}}
+			        {% if form.descricao.errors %}
+			            <div class="ui red pointing label">
+			                {{ form.descricao.errors }}
+			            </div>
+			        {% endif %}
+				</div>
+		    </div>
+		    <div class="field">
+			    <label>Artefato</label>
+			    {{form.artefato}}
+	        </div>
+	    </div>
+	    <div class="field">
+	    	<input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>
+	    </div>
+	</form>
+
+{% endblock %}
