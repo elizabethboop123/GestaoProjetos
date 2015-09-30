@@ -78,7 +78,9 @@ article{
 .submenu i, .submenu a {
 	display: inline-flex !important;
 }
-.item{cursor: pointer;}
+.item{
+	cursor: pointer;
+}
 
 /********************Definições de form*************************/
 
@@ -101,6 +103,7 @@ input.verde_escuro{
 .errorlist li{
 	list-style: none;
 	padding:0;
+	margin:0;
 }
 /********************Definições de qualquer coisa que eu nao sei o que é*************************/
 
