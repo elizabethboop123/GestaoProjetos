@@ -31,7 +31,6 @@ class CadastroPerfil(View):
 			
 		if form.is_valid():
 			form.save(request)
-
 			return redirect('/')
 
 		else:
