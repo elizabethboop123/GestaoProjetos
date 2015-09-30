@@ -12,86 +12,73 @@
         <header class="cabecalho">
             <div class="ui grid">
                 <div class="row"> 
-                    <div class='five wide column'>
-                        <h1 class="branco titulo">
-                            <img src="{% static 'semantic/blueprint.png'%}" class="branco"> 
-                                PROJETOS
+                    <div class='twelve wide column'>
+                        <h1 class="ui header">
+                            <i class='ui icon world'></i>
+                            <div class="ui content">
+                                Gestão de Projetos
+                                <p class="sub header">
+                                    Fábrica de software
+                                </p>
+                            </div>
                         </h1>
                     </div>
                 </div>
                 {% if user.is_authenticated %}  
-                <div class="row row-menu">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Usuário</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/usuario/cadastro.html" class="item branco">
-                                                <i class="block layout icon branco"></i>
-                                                Cadastrar
-                                            </a>                                            <a href="/consulta_usuario" class="item branco">
-                                                <i class="search icon branco"></i>
-                                                Consulta Usuário
-                                            </a>
-                                            <a href="/troca_senha/" class="item branco">
-                                                <i class="settings icon branco"></i>
-                                                Redefinir Senha
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Horário</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/horario/cadastro.html" class="item branco">
-                                                <i class="wait icon branco"></i>
-                                                Cadastrar
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                 <li>
-                                    <a href="#">Núcleo</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/nucleo/" class="item branco">
-                                                <i class="block layout icon branco"></i>
-                                                Cadastrar
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                 <li>
-                                    <a href="#">Recursos</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/recursos/cadastro.html" class="item branco">
-                                                <i class="block layout icon branco"></i>
-                                                Cadastrar
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                 <li>
-                                    <a href="#">Artefatos</a>
-                                    <ul>
-                                        <li>
-                                            <a href="/artefatos/cadastro.html" class="item branco">
-                                                <i class="block layout icon branco"></i>
-                                                Cadastrar
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="direita">
-                                    <a href="/logout">
-                                        <i class="sign out icon"></i>Sair
-
+                    <div class="row row-menu">
+                        <nav class='ui menu verde_escuro inverted large'>
+                            <div class="item">Usuário <i class='ui icon caret down'></i>
+                                <div class="submenu">
+                                    <a class='item' href="/usuario/cadastro.html"> 
+                                        <i class='ui icon layout block'></i>
+                                        Cadastrar 
                                     </a>
-                                </li>
-                            </ul>
+
+                                    <a href="/consulta_usuario" class="item branco">
+                                        <i class="search icon branco"></i>
+                                        Consulta Usuário
+                                    </a>
+                                    <a href="/troca_senha/" class="item branco">
+                                        <i class="settings icon branco"></i>
+                                        Redefinir Senha
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">Horário <i class='ui icon caret down'></i>
+                                <div class="submenu">
+                                    <a class='item' href="/horario/cadastro.html"> 
+                                        <i class='ui icon layout block'></i>
+                                        Cadastrar 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">Núcleo <i class='ui icon caret down'></i>
+                                <div class="submenu">
+                                    <a class='item' href="/núcleo/cadastro.html"> 
+                                        <i class='ui icon layout block'></i>
+                                        Cadastrar 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">Recursos <i class='ui icon caret down'></i>
+                                <div class="submenu">
+                                    <a class='item' href="/recursos/cadastro.html"> 
+                                        <i class='ui icon layout block'></i>
+                                        Cadastrar 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">Artefatos <i class='ui icon caret down'></i>
+                                <div class="submenu">
+                                    <a class='item' href="/artefatos/cadastro.html"> 
+                                        <i class='ui icon layout block'></i>
+                                        Cadastrar 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right menu">
+                                <a class="item" href="/logout">Logout</a>
+                            </div>
                         </nav>
                     </div>
                 {% endif %}
@@ -108,13 +95,15 @@
                 </div>
             </div>
         </article>
-        <footer class="ui grid rodape segment verde_escuro">
-            <div class="sixteen wide column altura">
-                <div class="ui small images">
-                    <img  class="imagem"src="{% static 'semantic/Logo.svg'%}">
-                    <img  class="direita imagem" id="icone" src="{% static 'semantic/ifc2.png'%}">
-                </div> 
+        <footer class="ui grid rodape verde_escuro">
+            <div class="two wide column">
+                <img class="ui small image"src="{% static 'semantic/fabrica.png'%}">
             </div>
+            <div class="twelve wide column"></div>
+            <div class="two wide column">
+                <img  class="ui small image" src="{% static 'semantic/ifc2.png'%}">
+            </div>
+            
         </footer>
     </body>
 </html>
