@@ -11,21 +11,18 @@
 	padding:0 !important;
  }
 .cabecalho{
-	min-height: 20% !important;
+	min-height: 16% !important;
+	color: #005e83 !important;
 }
 .cabecalho .grid{
 	margin:0 !important;
 	padding:0 !important;
 }
 .corpo{
-	min-height: 63% !important;
+	min-height: 64.9% !important;
 }
 .rodape{
-	min-height: 18% !important;
-}
-.titulo{
-	font-family: Purisa;
-	text-shadow: 0 1px 0 #ccc,
+	min-height: 11% !important;
 }
 
 article{
@@ -33,24 +30,14 @@ article{
 }
 
 /********************Definições cores*************************/
-
-.cor-fundo{
-		background-color: #289191 !important;
+.red{
+	background-color: #B63333 !important;
 }
+
 .verde_escuro{
-	background:#267a7a !important;
+	background:#005e83 !important;
 	color:#FFFFFF !important;
 }
-.branco{
-	color:#FFFFFF !important;
-	font-size: 18px;
-}
-.cor-conteudo{
-
-	background: #d6d6d6 !important;
-}
-
-
 
 /********************Definições menu*************************/
 .row-menu{
@@ -58,95 +45,68 @@ article{
 	padding: 0 !important;
 }
 
+.item{
+	color:#fff !important;
 
-nav li{
-	list-style-type: none;
-	margin:0;
-	padding:0;
-	font-size: 16px !important;
 }
 
-nav ul ul {
-	display: none;
-	z-index:1;
+.ui.large.menu .item {
+  font-size: 1.3rem !important;
 }
 
-nav ul li:hover > ul {
-	display: block;
+.item .submenu{
+	display:none !important;
 }
 
-nav ul {
-	background: #267a7a ;
-	padding: 0 20px;
-	list-style: none;
-	position: relative;
-}
-nav ul:after {
-	content: ""; clear: both; display: block;
+.item:hover > .submenu{
+	display: inline-block !important;
 }
 
-nav ul li {
-	float: left;
-}
-nav ul li:hover {
-	background: #007D82;
-}
-nav ul li:hover a {
-	color: #fff;
-}
-		
-nav ul li a {
-	display: block;
-	padding: 16px 40px;
-	color: #FFFFFF;
-	text-decoration: none;
-	font-size: 16px !important;
-}
-			
-nav ul ul {
-	background: #007D7B;
+.submenu{
 	padding: 0;
 	position: absolute;
 	top: 100%;
+	z-index: 999;
+	background-color: #005e83;
 }
-nav ul ul li {
-	border-top: 1px solid #009491;
-	border-bottom: 1px solid #007D7B;
-	position: relative;
+
+.submenu i{
+	width: 30px !important;
 }
-nav ul ul li a {
-	padding: 15px 40px;
-	color: #fff;
-}	
-nav ul ul li a:hover {
-	background: #004847;
+
+.layout.block{ margin-right: -6px !important;}
+.submenu i, .submenu a {
+	display: inline-flex !important;
 }
-		
-nav ul ul ul {
-	position: absolute; left: 100%; top:0;
+.item{cursor: pointer;}
+
+/********************Definições de form*************************/
+
+
+label{font-size: 1.125em !important;}
+
+input{
+	  border-color: #005E83 !important;
+}
+input:active, input:focus{
+background-color:rgba(0, 94, 131, 0.2) !important
+}
+
+input.verde_escuro{
+	background-color: #2E9447 !important;
 }
 
 
-/********************Definições logout*************************/
 
-.logout{
-	font-size: 20px;
+.errorlist li{
+	list-style: none;
+	padding:0;
 }
-
 /********************Definições de qualquer coisa que eu nao sei o que é*************************/
 
 .ui.pointing.label{
 	font-size: 100%;
 	padding:0%;
-}
-ul{
-	list-style: none;
-	padding:0;
-	margin:0;
-
-}
-li{
-	padding: 10px;
 }
 #icone{
 	margin-top: 2% !important;
