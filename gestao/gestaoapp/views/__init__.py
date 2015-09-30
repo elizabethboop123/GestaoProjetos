@@ -4,6 +4,7 @@ from gestaoapp.views.usuario import CadastroUsuario, VerificarUsuario, ConsultaU
 from gestaoapp.views.perfil import CadastroPerfil
 from gestaoapp.views.horario import CadastroHorario
 from gestaoapp.views.nucleo import CadastroNucleo
+from gestaoapp.views.recurso import CadastroRecurso
 
 
 def sucesso(request):

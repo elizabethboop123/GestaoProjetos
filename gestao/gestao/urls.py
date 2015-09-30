@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^sucesso_senha/$', CadastroUsuario.as_view(), name='password_change_done'),
 
     url(r'^nucleo/', CadastroNucleo.as_view()),
+    url(r'^recurso/', CadastroRecurso.as_view()),
 
 
     # url(r'^recursos/$', 'django.contrib.auth.views.password_change',{'template_name': 'recursos.html'}),
