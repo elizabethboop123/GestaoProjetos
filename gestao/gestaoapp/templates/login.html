@@ -12,6 +12,9 @@
 					</aside>
 				{% endif %}
 				<form class='ui form' method="POST" action="{% url 'django.contrib.auth.views.login' %}">
+					<h1 class="header">
+							Login
+					</h1>
 					{% csrf_token %}	
 					<div class="field">
 						<label>Usuário</label>
