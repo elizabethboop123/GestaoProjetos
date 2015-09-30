@@ -20,12 +20,13 @@ urlpatterns = [
 
 
     url(r'^perfil/', CadastroPerfil.as_view()),
-    url(r'^editarperfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),
+    url(r'^editar_perfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),
 
     url(r'^horario/', CadastroHorario.as_view()),
+    
 
     url(r'^sucesso/', sucesso),
-    url(r'^editarhorario/(?P<horario_id>\d+)/$', CadastroHorario.as_view()),
+    url(r'^editar_horario/(?P<horario_id>\d+)/$', CadastroHorario.as_view()),
 
     url(r'^cadastro_liberado/', cadastro_liberado),
 
@@ -33,11 +34,20 @@ urlpatterns = [
     url(r'^sucesso_senha/$', CadastroUsuario.as_view(), name='password_change_done'),
 
     url(r'^nucleo/', CadastroNucleo.as_view()),
+    url(r'^editar_nucleo/', CadastroNucleo.as_view()),
+
     url(r'^recurso/', CadastroRecurso.as_view()),
+    url(r'^editar_recurso/', CadastroRecurso.as_view()),
+    
+    url(r'^tipo_recurso/', CadastroTipoRecurso.as_view()),
+    url(r'^editar_tipo_recurso/', CadastroTipoRecurso.as_view()),
+
+    url(r'^artefato/', CadastroArtefato.as_view()),
+    url(r'^editar_artefato/', CadastroArtefato.as_view()),
+    
+    url(r'^atividade/', CadastroAtividade.as_view()),
+    url(r'^editar_atividade/', CadastroAtividade.as_view()),
 
 
-    # url(r'^recursos/$', 'django.contrib.auth.views.password_change',{'template_name': 'recursos.html'}),
-    # url(r'^artefatos/$', 'django.contrib.auth.views.password_change',{'template_name': 'artefatos.html'}),
-    # url(r'^nucleo/$', 'django.contrib.auth.views.password_change',{'template_name': 'nucleo.html'}),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

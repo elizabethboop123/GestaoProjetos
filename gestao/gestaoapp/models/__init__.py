@@ -6,3 +6,5 @@ from gestaoapp.models.vinculo import Vinculo
 from gestaoapp.models.nucleo import Nucleo
 from gestaoapp.models.recurso import Recurso
 from gestaoapp.models.tiporecurso import TipoRecurso
+from gestaoapp.models.artefato import Artefato
+from gestaoapp.models.atividade import Atividade

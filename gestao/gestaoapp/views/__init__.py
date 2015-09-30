@@ -5,6 +5,9 @@ from gestaoapp.views.perfil import CadastroPerfil
 from gestaoapp.views.horario import CadastroHorario
 from gestaoapp.views.nucleo import CadastroNucleo
 from gestaoapp.views.recurso import CadastroRecurso
+from gestaoapp.views.tiporecurso import CadastroTipoRecurso
+from gestaoapp.views.artefato import CadastroArtefato
+from gestaoapp.views.atividade import CadastroAtividade
 
 
 def sucesso(request):
