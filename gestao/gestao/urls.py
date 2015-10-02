@@ -18,12 +18,10 @@ urlpatterns = [
     url(r'^consulta_usuario/', ConsultaUsuario.as_view()),
     url(r'^visualizar_usuario/(?P<usuario_id>\d+)/$', VisualizarUsuario.as_view()),
 
-
     url(r'^perfil/', CadastroPerfil.as_view()),
     url(r'^editar_perfil/(?P<perfil_id>\d+)/$', CadastroPerfil.as_view()),
 
-    url(r'^horario/', CadastroHorario.as_view()),
-    
+    url(r'^horario/', CadastroHorario.as_view()),    
 
     url(r'^sucesso/', sucesso),
     url(r'^editar_horario/(?P<horario_id>\d+)/$', CadastroHorario.as_view()),
@@ -38,7 +36,6 @@ urlpatterns = [
 
     url(r'^recurso/', CadastroRecurso.as_view()),
     url(r'^editar_recurso/', CadastroRecurso.as_view()),
-    
     url(r'^tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^editar_tipo_recurso/', CadastroTipoRecurso.as_view()),
 
@@ -48,6 +45,8 @@ urlpatterns = [
     url(r'^atividade/', CadastroAtividade.as_view()),
     url(r'^editar_atividade/', CadastroAtividade.as_view()),
 
+    url(r'^edital/', CadastroEdital.as_view()),
 
+    url(r'^projeto/', CadastroProjeto.as_view()),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

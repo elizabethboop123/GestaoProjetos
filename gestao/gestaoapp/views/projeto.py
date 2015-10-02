@@ -4,15 +4,15 @@ from gestaoapp.forms.projeto import FormProjeto
 from gestaoapp.models.projeto import Projeto
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
-class CadastroProjeto(LoginRequiredMixin, View):
+class CadastroProjeto(LoginRequiredMixin,View):
 
 	template = 'projeto/cadastro.html'
 
 	def get(self, request, projeto_id=None):
 
 		if projeto_id:
-			projeto = Projeto.objects.get(id=projeto_id)
-			form = FormProjeto(instance= projeto)
+			nome = Projeto.objects.get(id=projeto_id)
+			form = FormProjeto(instance= nome)
 			editar=True
 		else:
 			form = FormProjeto()
@@ -23,13 +23,14 @@ class CadastroProjeto(LoginRequiredMixin, View):
 	def post(self, request, projeto_id=None):
 		
 		if projeto_id:
-			projeto = Projeto.objects.get(id=projeto_id)
-			form = FormProjeto(instance=projeto, data=request.POST)
+			nome = Projeto.objects.get(id=projeto_id)
+			form = FormProjeto(instance=nome, data=request.POST)
 		else:
 			form = FormProjeto(request.POST)
-		
+			
 		if form.is_valid():
 			form.save(request)
-			return redirect('/')
+			return redirect('/projeto')
 		else:
 			return render(request, self.template, {'form': form})
+
