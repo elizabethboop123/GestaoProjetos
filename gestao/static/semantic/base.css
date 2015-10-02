@@ -1,7 +1,4 @@
 /********************Definições gerais*************************/
-body{
-	background:##B63333 !important;
-}
 .centro{
 	padding-left:8% !important;
 }
@@ -104,6 +101,9 @@ background-color:rgba(0, 94, 131, 0.2) !important
 }
 
 input.verde_escuro{
+	background-color: #2E9447 !important;
+}
+.verde{
 	background-color: #2E9447 !important;
 }
 .errorlist{
