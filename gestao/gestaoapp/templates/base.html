@@ -70,20 +70,22 @@
                             </div>
                             <div class="item">Artefatos <i class='ui icon caret down'></i>
                                 <div class="submenu">
-                                    <a class='item' href="/artefatos/cadastro.html"> 
+                                    <a class='item' href="/artefato/cadastro.html"> 
                                         <i class='ui icon layout block'></i>
                                         Cadastrar 
                                     </a>
                                 </div>
                             </div>
-                            <div class="item">Administrador <i class='ui icon caret down'></i>
-                                <div class="submenu">
-                                    <a class='item' href="/desbloquear_usuario"> 
-                                        <i class='ui icon layout block'></i>
-                                        Desbloquear Usuário 
-                                    </a>
+                            {% if user.is_superuser %}
+                                <div class="item">Administrador <i class='ui icon caret down'></i>
+                                    <div class="submenu">
+                                        <a class='item' href="/desbloquear_usuario"> 
+                                            <i class='ui icon layout block'></i>
+                                            Desbloquear Usuário 
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
                             <div class="right menu">
                                 <a class="item" href="/logout">Logout</a>
                             </div>
