@@ -8,3 +8,7 @@ from gestaoapp.models.recurso import Recurso
 from gestaoapp.models.tiporecurso import TipoRecurso
 from gestaoapp.models.artefato import Artefato
 from gestaoapp.models.atividade import Atividade
+from gestaoapp.models.edital import Edital
+from gestaoapp.models.tipoprojeto import TipoProjeto
+from gestaoapp.models.projeto import Projeto
+
