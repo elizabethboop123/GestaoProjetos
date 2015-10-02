@@ -28,9 +28,9 @@
 					    <tr>	 
 						   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
 						   	{% if usuario.is_active %} 
-						   	<td class="centro"><i class="checkmark green large icon"></i></td>
+						   	<td class="centro"><i class="edit icon"></i></td>
 						   	{% else %}
-						   	<td class="centro"><i class="remove icone_red large icon"></i></td>
+						   	<td class="centro"><i class="remove icon"></i></td>
 						   	{% endif %}
 						   	<td>{{usuario.username}}</td>
 						   	{% if usuario.verificado %} 
