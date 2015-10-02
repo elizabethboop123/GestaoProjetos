@@ -3,52 +3,43 @@
 {% block titulo %} Consulta Usuario{% endblock %}
 {% block conteudo%} 
 {% if user.is_superuser %}
-<div class="ui margim">
- 	<div class="ui grid">
-        <div class="three wide column"></div>
-        <div class="ten wide column"> 
-			<h2 class=" ui header">Administrar Usuários</h2>
-			<form method='POST' action='/ConsultaLivro/' class="ui form">
-             	{% csrf_token %}
-             	<div class="ui field">
-				</div>
-			</form>
-				<table class="ui celled table">
-					<thead>
-						<tr>
-						    <th>Nome</th>
-						    <th>Desbloqueado</th>
-						    <th>Usuario</th>
-						    <th>Verificado</th>
-						    <th></th>
-						</tr>	
-					</thead>
-					<tbody>
-						{% for usuario in usuarios %}
-					    <tr>	 
-						   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
-						   	{% if usuario.is_active %} 
-						   	<td class="centro"><i class="edit icon"></i></td>
-						   	{% else %}
-						   	<td class="centro"><i class="remove icon"></i></td>
-						   	{% endif %}
-						   	<td>{{usuario.username}}</td>
-						   	{% if usuario.verificado %} 
-						   	<td class="centro"><i class="checkmark green large icon"></i></td>
-						   	{% else %}
-						   	<td class="centro"><i class="remove icone_red large icon"></i></td>
-						   	{% endif %} 
-						   	<td><a href="http://sgp.fabricadesoftware.ifc.edu.br/liberar_usuario/{{usuario.verificacao}}">Desbloquear</a></td>
-					    </tr>
-			    		{% endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>	
+			
+<form method='POST' action='/ConsultaLivro/' class="ui form">
+    {% csrf_token %}
+    <h1 class=" ui header">Administrar Usuários</h1>
+	<table class="ui celled table">
+		<thead>
+			<tr>
+			    <th>Nome</th>
+			    <th>Desbloqueado</th>
+			    <th>Usuário</th>
+			    <th>Verificado</th>
+			    <th></th>
+			</tr>	
+		</thead>
+		<tbody>
+			{% for usuario in usuarios %}
+		    <tr>	 
+			   	<td>{{ usuario.first_name }} {{ usuario.last_name }} </td>
+			   	{% if usuario.is_active %} 
+			   	<td class="centro"><i class="checkmark green large icon"></i></td>
+			   	{% else %}
+			   	<td class="centro"><i class="remove icone_red large icon"></i></td>
+			   	{% endif %}
+			   	<td>{{usuario.username}}</td>
+			   	{% if usuario.verificado %} 
+			   	<td class="centro"><i class="checkmark green large icon"></i></td>
+			   	{% else %}
+			   	<td class="centro"><i class="remove icone_red large icon"></i></td>
+			   	{% endif %} 
+			   	<td><a href="http://sgp.fabricadesoftware.ifc.edu.br/liberar_usuario/{{usuario.verificacao}}">Desbloquear</a></td>
+		    </tr>
+    		{% endfor %}
+		</tbody>
+	</table>
+</form>	
 {%else%}
-	<div class='ui centered grid'>
+<div class='ui centered grid'>
 	<div class='two column centered row'>
 		<div class='ui column centered'>
 			<div class='ui centered'>
