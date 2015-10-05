@@ -1,38 +1,106 @@
 {% extends 'base.html'%}
-{% block titulo %} 	 Visualizar Usuário {% endblock %}
+{% block titulo %} 	 Visualizar Projeto {% endblock %}
 {% block conteudo %}
-	
-	{{projeto.nome}} <br>
-	{{projeto.descricao}}<br>
-	{{projeto.tipo}}<br>
-	{{projeto.duracao}}<br>
-	{{projeto.data_inicio}}<br>
-	{{projeto.data_fim}}<br>
-	{{projeto.situacao}}<br>
-
-	{% for edital in projeto.edital.all %} 
-		{{edital.numero}}<br>
-	{%endfor%}
-
-	{{projeto.qtd_bolsa}}<br>
-
-	{% for nucleo in projeto.nucleo.all %} 
-		{{nucleo.nome}}<br>
-	{%endfor%}
-
-	{% for atividade in projeto.atividade.all %} 
-	{{atividade.nome}}<br>
-	{%endfor%}
-
-	{% for equipe in projeto.equipe.all %} 
-	{{equipe}}<br>
-	{%endfor%}
-
-	{% for recurso in projeto.recurso.all %} 
-	{{recurso.nome}}<br>
-	{%endfor%}
-
-	{{projeto.coordenador}}<br>
-	{{projeto.data_cadastro}}<br>
+	<form class="ui grid" method="POST">
+		{% csrf_token %}
+		<div class="row">
+			<div class="three wide column"></div>
+			<div class="fifteen wide column">       
+				<div class="ui form">
+					<h2 class="ui header">
+			            Informações do Projeto
+			        </h2>
+				</div>
+				<div class="ui segment form">
+					<div class="two fields">
+						<div class="field">
+							<label>Nome</label>
+							{{projeto.nome}}
+						</div>
+						<div class="field">
+							<label>Edital</label>
+							{% for edital in projeto.edital.all %} 
+								{{edital.numero}}
+							{%endfor%}
+						</div>
+					</div>
+					<div class="field">
+						<label>Descrição</label>
+						{{projeto.descricao}}
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Núcleo</label>
+							{% for nucleo in projeto.nucleo.all %} 
+								{{nucleo.nome}}
+							{%endfor%}
+						</div>
+						<div class="field">
+							<label>Tipo</label>
+							{{projeto.tipo}}
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Situação</label>
+							{{projeto.situacao}}
+						</div>
+						<div class="field">
+							<label>Duração</label>
+							{{projeto.duracao}}
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Coordenador</label>
+							{{projeto.coordenador}}
+						</div>
+						<div class="field">
+							<label>Data de Cadastro</label>
+							{{projeto.data_cadastro}}
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Data de Início</label>
+							{{projeto.data_inicio}}
+						</div>
+						<div class="field">
+							<label>Data de Fim</label>
+							{{projeto.data_fim}}
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Atividade</label>
+							{% for atividade in projeto.atividade.all %} 
+								{{atividade.nome}}zs
+							{%endfor%}
+						</div>
+						<div class="field">
+							<label>Equipe</label>
+							{% for equipe in projeto.equipe.all %} 
+								{{equipe.first_name}} {{equipe.last_name}}
+							{%endfor%}
+						</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Recursos</label>
+							{% for recurso in projeto.recurso.all %} 
+								{{recurso.nome}}
+							{%endfor%}
+						</div>
+						<div class="field">
+							<label>Quantidade de Bolsas</label>
+							{{projeto.qtd_bolsa}}
+						</div>
+					</div>
+				</div> 
+				<a href='/consulta_projeto/'><input  class="ui button direita verde_escuro" value="Voltar"></a>
+				<a href='/editar_projeto/{{projeto.id}}'><input  class="ui button direita verde_escuro" value="Editar"></a>
+			</div>	
+		</div>
+	</form>
 
 {% endblock %}
