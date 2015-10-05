@@ -3,7 +3,13 @@
 {% block conteudo%} 
 	<form method='POST'>
 	   {% csrf_token %}      
-		<h1 class="ui header"> Cadastro de Projeto</h1>
+		<h1 class="ui header"> 
+        {%if editar %}
+            Editar Projeto
+        {% else %}
+            Cadastro de Projeto
+        {%endif%}
+        </h1>
 		<div class="ui form">
 			<div class="two fields">
 	            <div class="field">

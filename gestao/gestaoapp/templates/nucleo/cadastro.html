@@ -4,7 +4,12 @@
 {% if user.is_superuser %}
 	<form method='POST' enctype=" multipart/form-data">
         {% csrf_token %}           
-        <h1 class="ui header">Cadastro de Núcleo</h1>
+        <h1 class="ui header">
+        {%if editar %}
+            Editar Núcleo
+        {% else %}
+            Cadastro de Núcleo
+        {%endif%}</h1>
         <div class="ui large form">
 	        <div class="two fields">
 			    <div class="field">
