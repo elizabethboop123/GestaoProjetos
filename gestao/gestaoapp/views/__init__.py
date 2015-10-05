@@ -8,6 +8,9 @@ from gestaoapp.views.recurso import CadastroRecurso
 from gestaoapp.views.tiporecurso import CadastroTipoRecurso
 from gestaoapp.views.artefato import CadastroArtefato
 from gestaoapp.views.atividade import CadastroAtividade
+from gestaoapp.views.edital import CadastroEdital
+from gestaoapp.views.projeto import CadastroProjeto
+from gestaoapp.views.tipoprojeto import CadastroTipoProjeto
 
 
 def sucesso(request):

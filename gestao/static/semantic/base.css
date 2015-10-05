@@ -93,6 +93,9 @@ label{font-size: 1.125em !important;}
 input{
 	  border-color: #005E83 !important;
 }
+select{
+	  border-color: #005E83 !important;
+}
 input:active, input:focus{
 background-color:rgba(0, 94, 131, 0.2) !important
 }
@@ -100,14 +103,21 @@ background-color:rgba(0, 94, 131, 0.2) !important
 input.verde_escuro{
 	background-color: #2E9447 !important;
 }
+.verde{
+	background-color: #2E9447 !important;
+}
+.errorlist{
+	padding:8px !important;
+	margin:0 !important;
 
-
+}
 
 .errorlist li{
 	list-style: none;
-	padding:0;
-	margin:0;
+	
 }
+
+
 /********************Definições de qualquer coisa que eu nao sei o que é*************************/
 
 .ui.pointing.label{

@@ -1,12 +1,11 @@
 {% extends 'base.html'%}
 {% block titulo %} Cadastro de Usuário{% endblock %}
-{% block conteudo%} 
-<form method='POST' enctype="multipart/form-data">
-        {% csrf_token %}  
-        {{form.erros}}         
-        <h1 class="ui header">Cadastro de Usuário</h1>
-        <div class="ui large form">
-        	<div class="two fields">
+{% block conteudo %}
+	<form method='POST' enctype="multipart/form-data">
+        {% csrf_token %} 
+	    <h1 class="ui header">Cadastro de Usuário</h1>
+	    <div class="ui large form">
+	    	<div class="two fields">
 	            <div class="field">
 	                <label>Nome</label>
 	                {{form.first_name}}
@@ -26,21 +25,13 @@
 	                {% endif %}
 	            </div>
 	        </div>
-            <div class="three fields tres">
-            	<div class="field vinculopai">
+	        <div class="three fields tres">
+	        	<div class="field vinculopai">
 	                <label>Vínculo Institucional</label>
-	                <!-- {{form.vinculo_institucional}}
-	                {% if form.vinculo_institucional.errors %}
-	                 	<div class="ui red pointing label">
-	                    	{{ form.vinculo_institucional.errors }}
-	                 	</div>
-	                {% endif %} -->
-	                
-	                <select class="vinculo">
+	               	    <select class="vinculo">
 	                	<option value='null'> Selecione </option>
 	                	<option value='Aluno'> Aluno </option>
-	                	<option value='Professor'> Professor </option>
-	                	
+	                	<option value='Professor'> Professor </option>	
 	                </select>
 	            </div>
 	            <div class="field curso">
@@ -90,8 +81,7 @@
 		                <div class="ui red pointing label">
 		                   	{{ form.email.errors }}
 		                </div>
-		            {% epointing label">
-	                    	{{ form.vinculo_institucional.errorsndif %}
+	                {%endif%}
 		        </div>
 	            <div class="field">
 		            <label>E-mail Opcional</label>
@@ -153,16 +143,17 @@
 		        </div>
 		    </div>
 		    <div class="field">
-		            <label>Foto</label>
-		            {{form.foto}}
-		            {% if form.foto.errors %}
-		                <div class="ui red pointing label">
-		                   	{{ form.foto.errors }}
-		                </div>
-		            {% endif %}
-		        </div>
-           	<input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>
-        </div>
-    </form>
-{%endblock%}
+	            <label>Foto</label>
+	            {{form.foto}}
+	            {% if form.foto.errors %}
+	                <div class="ui red pointing label">
+	                   	{{ form.foto.errors }}
+	                </div>
+	            {% endif %}
+	        </div>
+	        <button class="ui submit button red">Cancelar</button>
+	       	<input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>
+	    </div>
+	</form>
+{% endblock %}
 

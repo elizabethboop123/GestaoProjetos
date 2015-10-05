@@ -49,7 +49,7 @@ class FormUsuario(forms.ModelForm):
 		return email
 
 	def manda_email(self, usuario):
-		send_mail('Desbloqueio de Conta', 'http://191.52.62.32:8080/verificar_usuario/'+usuario.verificacao+'', 'gestao@fabricadesoftware.ifc.edu.br',[usuario.email], fail_silently=False)
+		send_mail('Desbloqueio de Conta', 'http://sgp.fabricadesoftware.ifc.edu.br/verificar_usuario/'+usuario.verificacao+'', 'gestao@fabricadesoftware.ifc.edu.br',[usuario.email], fail_silently=False)
 
 	def save(self, commit=True):
 		self.clean_confirma_senha()

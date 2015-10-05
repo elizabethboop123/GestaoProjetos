@@ -1,0 +1,167 @@
+{% extends 'base.html'%}
+{% block titulo %} Cadastro de Projeto{% endblock %}
+{% block conteudo%} 
+	<form method='POST'>
+	   {% csrf_token %}      
+		<h1 class="ui header"> Cadastro de Projeto</h1>
+		<div class="ui form">
+			<div class="two fields">
+	            <div class="field">
+	                <label>Nome</label>
+	                {{form.nome}}
+	                {% if form.nome.errors %}
+	                    <div class="ui red pointing label">
+	                        {{ form.nome.errors }}
+	                    </div>
+	                {% endif %}
+	            </div>
+	            <div class="field">
+	                <label>Descrição</label>
+	                {{form.descricao}}
+	                {% if form.descricao.errors %}
+	                    <div class="ui red pointing label">
+	                        {{ form.descricao.errors }}
+	                    </div>
+	                {% endif %}
+	            </div>
+	        </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Código</label>
+                    {{form.codigo}}
+                    {% if form.codigo.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.codigo.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Tipo</label>
+	               	{{form.tipo}}
+                    {% if form.tipo.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.tipo.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="three fields">
+                <div class="field">
+                    <label>Duração</label>
+                    {{form.duracao}}
+                    {% if form.duracao.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.duracao.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Data de Início</label>
+                    {{form.data_inicio}}
+                    {% if form.data_inicio.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.data_inicio.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+                    <label>Data de Término</label>
+                    {{form.data_fim}}
+                    {% if form.data_fim.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.data_fim.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
+	            <div class="field">
+	            	<div class="ui checkbox">
+	  					<input type="checkbox" name="example">
+	  					<label>Situação</label>
+					</div>
+				</div>
+                <div class="field">
+					<label>Quantidade de Bolsas</label>
+                    {{form.qtd_bolsa}}
+                    {% if form.qtd_bolsa.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.qtd_bolsa.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
+	            <div class="field">
+					<label>Núcleo</label>
+	                {{form.nucleo}}
+	                {% if form.nucleo.errors %}
+	                  	<div class="ui red poidt_terminonting label">
+	                        {{ form.nucleo.errors }}
+	                    </div>
+	                {% endif %}
+	            </div>
+				<div class="field">
+					<label>Edital</label>
+                    {{form.edital}}
+                    {% if form.edital.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.edital.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
+            	<div class="field">
+					<label>Equipe</label>
+                    {{form.equipe}}
+                    {% if form.equipe.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.equipe.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+					<label>Atividade</label>
+                    {{form.atividade}}
+                    {% if form.atividade.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.atividade.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="two fields">
+            	<div class="field">
+					<label>Recurso</label>
+                    {{form.recurso}}
+                    {% if form.recurso.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.recurso.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="field">
+					<label>Coordenador</label>
+                    {{form.coordenador}}
+                    {% if form.coordenador.errors %}
+                        <div class="ui red poidt_terminonting label">
+                            {{ form.coordenador.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+          	<div class="field">
+          		<label>Endereço Git</label>
+                {{form.endereco_git}}
+                {% if form.endereco_git.errors %}
+                    <div class="ui red poidt_terminonting label">
+                        {{ form.endereco_git.errors }}
+                    </div>
+                {% endif %}
+            </div>
+			    <input type="submit" class="ui submit button direita verde_escuro"/>	
+		</div>
+	</form>
+
+{% endblock %}

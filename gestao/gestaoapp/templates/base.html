@@ -54,7 +54,7 @@
                             </div>
                             <div class="item">Núcleo <i class='ui icon caret down'></i>
                                 <div class="submenu">
-                                    <a class='item' href="/núcleo/cadastro.html"> 
+                                    <a class='item' href="/nucleo"> 
                                         <i class='ui icon layout block'></i>
                                         Cadastrar 
                                     </a>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="item">Recursos <i class='ui icon caret down'></i>
                                 <div class="submenu">
-                                    <a class='item' href="/recursos/cadastro.html"> 
+                                    <a class='item' href="/recurso/cadastro.html"> 
                                         <i class='ui icon layout block'></i>
                                         Cadastrar 
                                     </a>
@@ -70,12 +70,22 @@
                             </div>
                             <div class="item">Artefatos <i class='ui icon caret down'></i>
                                 <div class="submenu">
-                                    <a class='item' href="/artefatos/cadastro.html"> 
+                                    <a class='item' href="/artefato/cadastro.html"> 
                                         <i class='ui icon layout block'></i>
                                         Cadastrar 
                                     </a>
                                 </div>
                             </div>
+                            {% if user.is_superuser %}
+                                <div class="item">Administrador <i class='ui icon caret down'></i>
+                                    <div class="submenu">
+                                        <a class='item' href="/desbloquear_usuario"> 
+                                            <i class='ui icon layout block'></i>
+                                            Desbloquear Usuário 
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
                             <div class="right menu">
                                 <a class="item" href="/logout">Logout</a>
                             </div>
@@ -102,8 +112,7 @@
             <div class="twelve wide column"></div>
             <div class="two wide column">
                 <img  class="ui small image" src="{% static 'semantic/ifc2.png'%}">
-            </div>
-            
+            </div>  
         </footer>
     </body>
 </html>

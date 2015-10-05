@@ -2,38 +2,30 @@
 {% block titulo %}Consulta de Usuário{% endblock %}
 {% block conteudo%} 
 
-<div class="ui margim">
- 	<div class="ui grid">
-        <div class="three wide column"></div>
-        <div class="fifteen wide column"> 
-			<h1 class=" ui header">Consulta Usuário</h1>
-			<form method='POST' action='/consulta_usuario/' class="ui form">
-             	{% csrf_token %}
-             	<div class="ui field">
-					{{form.nome}}
-				</div>
-				<button type="submit" class="ui button"><i class="search icon"></i> </button>
-			</form>
-			<table class="ui celled table">
-				<thead>
-					<tr>
-						<th>Nome</th>
-						<th>Vínculo</th>
-						<th>Informações</th>
-					</tr>	
-				</thead>
-				<tbody>
-				{% for usuario in usuarios %}
-					<tr>
-						<td>{{ usuario.first_name }}</td>
-						<td>{{ usuario.vinculo_institucional }}</td>
-						<td class="negative"><a href="../visualizar_usuario/{{usuario.id}}">Mais</a></td>
-					</tr>
-				{% endfor %}
-				</tbody>
-			</table>
-		</div>
+<form method='POST' action='/consulta_usuario/' class="ui form">
+ 	{% csrf_token %}
+ 	<h1 class=" ui header">Consulta Usuário</h1>
+ 	<div class="ui field">
+		{{form.nome}}
 	</div>
-</div>	
-
+	<button type="submit" class="ui button verde_escuro direita"><i class="search icon"></i> </button>
+</form>
+<table class="ui celled table">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Vínculo</th>
+			<th>Informações</th>
+		</tr>	
+	</thead>
+	<tbody>
+	{% for usuario in usuarios %}
+		<tr>
+			<td>{{ usuario.first_name }}</td>
+			<td>{{ usuario.vinculo_institucional }}</td>
+			<td class="negative"><a href="../visualizar_usuario/{{usuario.id}}">Mais</a></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
 {%endblock%}
