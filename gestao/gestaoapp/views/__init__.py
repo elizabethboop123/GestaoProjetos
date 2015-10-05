@@ -9,7 +9,7 @@ from gestaoapp.views.tiporecurso import CadastroTipoRecurso
 from gestaoapp.views.artefato import CadastroArtefato
 from gestaoapp.views.atividade import CadastroAtividade
 from gestaoapp.views.edital import CadastroEdital
-from gestaoapp.views.projeto import CadastroProjeto
+from gestaoapp.views.projeto import CadastroProjeto, ConsultaProjeto, VisualizarProjeto
 from gestaoapp.views.tipoprojeto import CadastroTipoProjeto
 
 
