@@ -5,6 +5,7 @@ from gestaoapp.models.usuario import Usuario
 from gestaoapp.models.atividade import Atividade
 from gestaoapp.models.edital import Edital
 from gestaoapp.models.tipoprojeto import TipoProjeto
+from gestaoapp.models.situacaoprojeto import SituacaoProjeto
 
 class Projeto(models.Model):
 	
@@ -15,7 +16,7 @@ class Projeto(models.Model):
 	duracao = models.CharField(max_length = 255)
 	data_inicio = models.DateField()
 	data_fim = models.DateField()
-	situacao = models.BooleanField()
+	situacao = models.ForeignKey(SituacaoProjeto)
 	edital = models.ManyToManyField(Edital)
 	qtd_bolsa = models.IntegerField()
 	nucleo = models.ManyToManyField(Nucleo)
