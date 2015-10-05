@@ -82,11 +82,14 @@
             </div>
             <div class="two fields">
 	            <div class="field">
-	            	<div class="ui checkbox">
-	  					<input type="checkbox" name="example">
-	  					<label>Situação</label>
-					</div>
-				</div>
+	  				<label>Situação</label>
+                    {{form.situacao}}
+                    {% if form.situacao.errors %}
+                        <div class="ui red red pointing label">
+                            {{ form.situacao.errors }}
+                        </div>
+                    {% endif %}
+                </div>
                 <div class="field">
 					<label>Quantidade de Bolsas</label>
                     {{form.qtd_bolsa}}
