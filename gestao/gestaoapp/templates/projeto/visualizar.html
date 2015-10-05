@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block titulo %} 	 Visualizar Usuário {% endblock %}
+{% block conteudo %}
+	
+	{{projeto.nome}} <br>
+	{{projeto.descricao}}<br>
+	{{projeto.tipo}}<br>
+	{{projeto.duracao}}<br>
+	{{projeto.data_inicio}}<br>
+	{{projeto.data_fim}}<br>
+	{{projeto.situacao}}<br>
+
+	{% for edital in projeto.edital.all %} 
+		{{edital.numero}}<br>
+	{%endfor%}
+
+	{{projeto.qtd_bolsa}}<br>
+
+	{% for nucleo in projeto.nucleo.all %} 
+		{{nucleo.nome}}<br>
+	{%endfor%}
+
+	{% for atividade in projeto.atividade.all %} 
+	{{atividade.nome}}<br>
+	{%endfor%}
+
+	{% for equipe in projeto.equipe.all %} 
+	{{equipe}}<br>
+	{%endfor%}
+
+	{% for recurso in projeto.recurso.all %} 
+	{{recurso.nome}}<br>
+	{%endfor%}
+
+	{{projeto.coordenador}}<br>
+	{{projeto.data_cadastro}}<br>
+
+{% endblock %}
