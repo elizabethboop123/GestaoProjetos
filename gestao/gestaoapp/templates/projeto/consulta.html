@@ -5,10 +5,16 @@
 <form method='POST' action='/consulta_projeto/' class="ui form">
  	{% csrf_token %}
  	<h1 class=" ui header">Consulta Projeto</h1>
- 	<div class="ui field">
+
+ 	<div class="ui action input">
+  		{{form.nome}}
+	    	<input type="submit" value="Pesquisar" class='icon search'>
+
+	</div>
+ 	<!-- <div class="ui field">
 		{{form.nome}}
 	</div>
-	<button type="submit" class="ui button verde_escuro direita"><i class="search icon"></i> </button>
+	<button type="submit" class="ui button verde_escuro direita"><i class="search icon"></i> </button> -->
 </form>
 <table class="ui celled table">
 	<thead>
