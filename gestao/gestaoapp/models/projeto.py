@@ -6,6 +6,7 @@ from gestaoapp.models.atividade import Atividade
 from gestaoapp.models.edital import Edital
 from gestaoapp.models.tipoprojeto import TipoProjeto
 from gestaoapp.models.situacaoprojeto import SituacaoProjeto
+from gestaoapp.models.faseprojeto import FaseProjeto
 
 class Projeto(models.Model):
 	
@@ -17,7 +18,8 @@ class Projeto(models.Model):
 	data_inicio = models.DateField()
 	data_fim = models.DateField()
 	situacao = models.ForeignKey(SituacaoProjeto)
-	edital = models.ManyToManyField(Edital)
+	fase = models.ForeignKey(FaseProjeto)
+	edital = models.ManyToManyField(Edital,null=True, blank=True)
 	qtd_bolsa = models.IntegerField()
 	nucleo = models.ManyToManyField(Nucleo)
 	atividade = models.ManyToManyField(Atividade)

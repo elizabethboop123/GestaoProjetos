@@ -12,3 +12,4 @@ from gestaoapp.models.edital import Edital
 from gestaoapp.models.tipoprojeto import TipoProjeto
 from gestaoapp.models.projeto import Projeto
 from gestaoapp.models.situacaoprojeto import SituacaoProjeto
+from gestaoapp.models.faseprojeto import FaseProjeto
