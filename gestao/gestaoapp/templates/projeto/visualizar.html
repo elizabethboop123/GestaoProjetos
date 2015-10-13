@@ -7,8 +7,8 @@
 			<div class="fifteen wide column">       
 				<div class="ui form">
 					<h2 class="ui header">
-			            Informações do Projeto
-			        </h2>
+						Informações do Projeto
+					</h2>
 				</div>
 				<div class="ui segment form">
 					<div class="two fields">
@@ -72,23 +72,56 @@
 					<div class="two fields">
 						<div class="field">
 							<label>Atividade</label>
-							{% for atividade in projeto.atividade.all %} 
-								{{atividade.nome}}
-							{%endfor%}
+							<table class="ui celled table">
+								<thead>
+									<tr>
+										<th>Atividade</th>
+									</tr>	
+								</thead>
+								<tbody>
+								{% for atividade in projeto.atividade.all %} 
+									<tr>	 
+										<td>{{atividade.nome}} </td>
+									</tr>
+								{%endfor%}
+								</tbody>
+							</table>
 						</div>
 						<div class="field">
 							<label>Equipe</label>
-							{% for equipe in projeto.equipe.all %} 
-								{{equipe.first_name}} {{equipe.last_name}}
-							{%endfor%}
+							<table class="ui celled table">
+								<thead>
+									<tr>
+										<th>Equipe</th>
+									</tr>	
+								</thead>
+								<tbody>
+								{% for equipe in projeto.equipe.all %} 
+									<tr>	 
+										<td>{{equipe.first_name}} {{equipe.last_name}} </td>
+									</tr>
+								{%endfor%}
+								</tbody>
+							</table>	
 						</div>
 					</div>
 					<div class="two fields">
 						<div class="field">
 							<label>Recursos</label>
-							{% for recurso in projeto.recurso.all %} 
-								{{recurso.nome}}
-							{%endfor%}
+							<table class="ui celled table">
+								<thead>
+									<tr>
+										<th>Recurso</th>
+									</tr>	
+								</thead>
+								<tbody>
+								{% for recurso in projeto.recurso.all %}
+									<tr>	 
+										<td>{{recurso.nome}}</td>
+									</tr>
+								{%endfor%}
+								</tbody>
+							</table>
 						</div>
 						<div class="field">
 							<label>Quantidade de Bolsas</label>
