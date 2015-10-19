@@ -1,6 +1,8 @@
 {% extends 'base.html'%}
 {% block titulo %} Cadastro de Projeto{% endblock %}
 {% block conteudo%} 
+{% if user.is_superuser %}
+
 	<form method='POST'>
 	   {% csrf_token %}      
 		<h1 class="ui header"> 
@@ -181,5 +183,16 @@
 			    <input type="submit" class="ui submit button direita verde_escuro"/>	
 		</div>
 	</form>
+{%else%}
+<div class='ui centered grid'>
+    <div class='two column centered row'>
+        <div class='ui column centered'>
+            <div class='ui centered'>
+                <h2 class='ui header centered'>Acesso bloqueado, somente administrador.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{%endif%}
 
 {% endblock %}
