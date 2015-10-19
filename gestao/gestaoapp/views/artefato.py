@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.artefato import FormArtefato
 from gestaoapp.models.artefato import Artefato
+from gestaoapp.forms.busca import Busca
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroArtefato(LoginRequiredMixin,View):
@@ -34,3 +35,22 @@ class CadastroArtefato(LoginRequiredMixin,View):
 		else:
 			return render(request, self.template, {'form': form})
 
+class ConsultaArtefato(LoginRequiredMixin, View):
+
+	template = 'artefato/consulta.html'
+	def get(self, request):
+		form = Busca()
+		artefato = Artefato.objects.all()
+
+		return render(request, self.template, {'artefatos': artefato ,"form": form})
+	
+	def post(self, request):
+		form = Busca(request.POST)
+		if form.is_valid():
+			artefato = Artefato.objects.filter(nome__icontains=form.cleaned_data['nome'])
+
+			return render(request, self.template, {'artefatos': artefato, 'form':form})
+		else:
+			form = Busca(request.POST)				
+			artefato = Artefato.objects.all()
+		return render(request, self.template, {'artefatos': artefato,"form": form})

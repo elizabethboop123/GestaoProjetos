@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.atividade import FormAtividade
 from gestaoapp.models.atividade import Atividade
+from gestaoapp.forms.busca import Busca
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroAtividade(View):
@@ -35,3 +36,23 @@ class CadastroAtividade(View):
 
 		else:
 			return render(request, self.template, {'form': form})
+			
+class ConsultaAtividade(LoginRequiredMixin, View):
+
+	template = 'atividade/consulta.html'
+	def get(self, request):
+		form = Busca()
+		atividade = Atividade.objects.all()
+
+		return render(request, self.template, {'atividades': atividade ,"form": form})
+	
+	def post(self, request):
+		form = Busca(request.POST)
+		if form.is_valid():
+			atividade = Atividade.objects.filter(nome__icontains=form.cleaned_data['nome'])
+
+			return render(request, self.template, {'atividades': atividade, 'form':form})
+		else:
+			form = Busca(request.POST)				
+			atividade = Atividade.objects.all()
+		return render(request, self.template, {'atividades': atividade,"form": form})

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from gestaoapp.forms.edital import FormEdital
 from gestaoapp.models.edital import Edital
+from gestaoapp.forms.busca import Busca
 from gestaoapp.views.loginrequired import LoginRequiredMixin
 
 class CadastroEdital(LoginRequiredMixin, View):
@@ -36,3 +37,23 @@ class CadastroEdital(LoginRequiredMixin, View):
 
 		else:
 			return render(request, self.template, {'form': form})
+
+class ConsultaEdital(LoginRequiredMixin, View):
+
+	template = 'edital/consulta.html'
+	def get(self, request):
+		form = Busca()
+		edital = Edital.objects.all()
+
+		return render(request, self.template, {'editals': edital ,"form": form})
+	
+	def post(self, request):
+		form = Busca(request.POST)
+		if form.is_valid():
+			edital = Edital.objects.filter(nome__icontains=form.cleaned_data['nome'])
+
+			return render(request, self.template, {'editals': edital, 'form':form})
+		else:
+			form = Busca(request.POST)				
+			edital = Edital.objects.all()
+		return render(request, self.template, {'editals': edital,"form": form})
