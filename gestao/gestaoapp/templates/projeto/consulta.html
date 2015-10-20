@@ -26,6 +26,7 @@
 			<th>Nucleos da Fabrica</th>
 			<th>Coordenador do Projeto</th>
 			<th>Visualizar</th>
+			<th>Editar</th>
 		</tr>	
 	</thead>
 	<tbody>
@@ -39,7 +40,9 @@
 				<td>{{ nucleo.nome }}</td>
 			{%endfor%}
 			<td>{{ projeto.coordenador }}</td>
-			<td class="negative"><a href="../visualizar_projeto/{{projeto.id}}">Mais</a></td>
+			<td><a href="../visualizar_projeto/{{projeto.id}}">Mais</a></td>
+			<td><a href="../editar_projeto/{{projeto.id}}"><i class="settings icon"></a></td>
+
 		</tr>
 	{% endfor %}
 	</tbody>
