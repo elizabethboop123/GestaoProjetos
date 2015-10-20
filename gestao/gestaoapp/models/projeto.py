@@ -19,7 +19,7 @@ class Projeto(models.Model):
 	data_fim = models.DateField()
 	situacao = models.ForeignKey(SituacaoProjeto)
 	fase = models.ForeignKey(FaseProjeto)
-	edital = models.ManyToManyField(Edital,null=True, blank=True)
+	edital = models.ManyToManyField(Edital, blank=True)
 	qtd_bolsa = models.IntegerField()
 	nucleo = models.ManyToManyField(Nucleo)
 	atividade = models.ManyToManyField(Atividade)

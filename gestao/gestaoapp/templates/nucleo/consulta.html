@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% block titulo %}Consulta de Nucleo{% endblock %}
+{% block conteudo%} 
+
+<form method='POST' action='/consulta_nucleo/' class="ui form">
+ 	{% csrf_token %}
+ 	<h1 class=" ui header">Consulta Nucleo</h1>
+
+ 	<div class="ui action input">
+  		{{form.nome}}
+	    	<input type="submit" value="Pesquisar" class='icon search'>
+
+	</div>
+ 	<!-- <div class="ui field">
+		{{form.nome}}
+	</div>
+	<button type="submit" class="ui button verde_escuro direita"><i class="search icon"></i> </button> -->
+</form>
+<table class="ui celled table">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Sigla</th>
+			<th>Descrição</th>
+		</tr>	
+	</thead>
+	<tbody>
+	{% for nucleo in nucleos %}
+		<tr>
+			<td>{{nucleo.nome}}</td>
+			<td>{{nucleo.sigla}}</td>
+			<td>{{nucleo.descricao}}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{{nucleo.nome}}
+{%endblock%}

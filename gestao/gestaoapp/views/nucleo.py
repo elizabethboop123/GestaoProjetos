@@ -30,8 +30,8 @@ class CadastroNucleo(LoginRequiredMixin,View):
 			form = FormNucleo(request.POST)
 			
 		if form.is_valid():
-			return redirect('/')
-
+			form.save(request)
+			return redirect('/nucleo')
 		else:
 			return render(request, self.template, {'form': form})
 
