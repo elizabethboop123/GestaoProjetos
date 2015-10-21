@@ -11,6 +11,7 @@ from gestaoapp.views.atividade import CadastroAtividade, ConsultaAtividade
 from gestaoapp.views.edital import CadastroEdital, ConsultaEdital
 from gestaoapp.views.projeto import CadastroProjeto, ConsultaProjeto, VisualizarProjeto
 from gestaoapp.views.tipoprojeto import CadastroTipoProjeto
+from gestaoapp.views.horaprojeto import CadastroHoraProjeto
 
 def sucesso(request):
 	return render(request, 'usuario/sucesso.html')
