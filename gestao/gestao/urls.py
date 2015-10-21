@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^nucleo/', CadastroNucleo.as_view()),
     url(r'^editar_nucleo/(?P<nucleo_id>\d+)/$', CadastroNucleo.as_view()),
     url(r'^consulta_nucleo/', ConsultaNucleo.as_view()),
+   
 
     url(r'^recurso/', CadastroRecurso.as_view()),
     url(r'^editar_recurso/(?P<recurso_id>\d+)/$', CadastroRecurso.as_view()),
