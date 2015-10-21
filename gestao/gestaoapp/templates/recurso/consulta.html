@@ -12,8 +12,10 @@
 <table class="ui celled table">
 	<thead>
 		<tr>
-			<th>Tipo</th>
+			<th>Código</th>
+			<th>Nome</th>
 			<th>Descrição</th>
+			<th>Tipo</th>
 			<th>Visualizar</th>
 			<th>Editar</th>
 		</tr>	
@@ -21,8 +23,10 @@
 	<tbody>
 	{% for recurso in recursos %}
 		<tr>
+			<td>{{recurso.codigo}}</td>
 			<td>{{recurso.nome}}</td>
 			<td>{{recurso.descricao}}</td>
+			<td>{{recurso.tipo}}</td>
 			<td class="negative"><a href="../visualizar_recurso/{{recurso.id}}">Mais</a></td>
 			<td><a href="../editar_recurso/{{recurso.id}}"><i class="settings icon"></a></td>
 		</tr>

@@ -14,9 +14,8 @@
 <table class="ui celled table">
 	<thead>
 		<tr>
-			<th>Nome</th>
-			<th>Sigla</th>
-			<th>Descrição</th>
+			<th>Número</th>
+			<th>Orgão</th>
 			<th>Visualizar</th>
 			<th>Editar</th>
 		</tr>	
@@ -24,9 +23,8 @@
 	<tbody>
 	{% for edital in editais %}
 		<tr>
-			<td>{{edital.nome}}</td>
-			<td>{{edital.sigla}}</td>
-			<td>{{edital.descricao}}</td>
+			<td>{{edital.numero}}</td>
+			<td>{{edital.orgao}}</td>
 			<td class="negative"><a href="../visualizar_edital/{{edital.id}}">Mais</a></td>
 			<td><a href="../editar_edital/{{edital.id}}"><i class="settings icon"></a></td>
 		</tr>
