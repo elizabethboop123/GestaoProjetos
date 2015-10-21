@@ -3,7 +3,7 @@ from django.template import RequestContext
 from gestaoapp.views.usuario import CadastroUsuario, VerificarUsuario, ConsultaUsuario, LiberarUsuario, VisualizarUsuario, AdministrarUsuario
 from gestaoapp.views.perfil import CadastroPerfil
 from gestaoapp.views.horario import CadastroHorario
-from gestaoapp.views.nucleo import CadastroNucleo, ConsultaNucleo
+from gestaoapp.views.nucleo import CadastroNucleo, ConsultaNucleo, VisualizarUsuario
 from gestaoapp.views.recurso import CadastroRecurso, ConsultaRecurso
 from gestaoapp.views.tiporecurso import CadastroTipoRecurso
 from gestaoapp.views.artefato import CadastroArtefato, ConsultaArtefato
