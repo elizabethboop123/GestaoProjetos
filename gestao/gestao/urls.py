@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^editar_tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^consulta_recurso/', ConsultaRecurso.as_view()),
-    #url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
+    url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
 
 
     url(r'^artefato/', CadastroArtefato.as_view()),
@@ -63,7 +63,7 @@ urlpatterns = [
     url(r'^editar_projeto/(?P<projeto_id>\d+)/$', CadastroProjeto.as_view()),
     url(r'^consulta_projeto/', ConsultaProjeto.as_view()),
     url(r'^visualizar_projeto/(?P<projeto_id>\d+)/$', VisualizarProjeto.as_view()),
-
-
+    
+    url(r'^horaprojeto/', CadastroHoraProjeto.as_view()),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
