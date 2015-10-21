@@ -54,3 +54,21 @@ class ConsultaRecurso(LoginRequiredMixin, View):
 			form = Busca(request.POST)				
 			recurso = Recurso.objects.all()
 		return render(request, self.template, {'recursos': recurso,"form": form})
+
+class VisualizarRecurso(LoginRequiredMixin, View):
+	
+	template = "recurso/visualizar.html"
+	
+	def get(self, request, recurso_id=None):
+		
+		if recurso_id:
+			recurso = Recurso.objects.get(id=recurso_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'recurso': recurso})
+	
+	def post(self, request):
+		
+		return render(request, self.template)

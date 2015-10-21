@@ -57,3 +57,21 @@ class ConsultaEdital(LoginRequiredMixin, View):
 			form = Busca(request.POST)				
 			edital = Edital.objects.all()
 		return render(request, self.template, {'editals': edital,"form": form})
+
+class VisualizarEdital(LoginRequiredMixin, View):
+	
+	template = "edital/visualizar.html"
+	
+	def get(self, request, edital_id=None):
+		
+		if edital_id:
+			edital = Edital.objects.get(id=edital_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'edital': edital})
+	
+	def post(self, request):
+		
+		return render(request, self.template)

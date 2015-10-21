@@ -9,12 +9,7 @@
  	<div class="ui action input">
   		{{form.nome}}
 	    	<input type="submit" value="Pesquisar" class='icon search'>
-
 	</div>
- 	<!-- <div class="ui field">
-		{{form.nome}}
-	</div>
-	<button type="submit" class="ui button verde_escuro direita"><i class="search icon"></i> </button> -->
 </form>
 <table class="ui celled table">
 	<thead>
@@ -22,6 +17,8 @@
 			<th>Nome</th>
 			<th>Sigla</th>
 			<th>Descrição</th>
+			<th>Visualizar</th>
+			<th>Editar</th>
 		</tr>	
 	</thead>
 	<tbody>
@@ -31,6 +28,7 @@
 			<td>{{nucleo.sigla}}</td>
 			<td>{{nucleo.descricao}}</td>
 			<td class="negative"><a href="../visualizar_nucleo/{{nucleo.id}}">Mais</a></td>
+			<td><a href="../editar_nucleo/{{nucleo.id}}"><i class="settings icon"></a></td>
 		</tr>
 	{% endfor %}
 	</tbody>

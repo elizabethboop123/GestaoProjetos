@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block titulo %}Consulta de Edital{% endblock %}
+{% block conteudo%} 
+
+<form method='POST' action='/consulta_edital/' class="ui form">
+ 	{% csrf_token %}
+ 	<h1 class=" ui header">Consulta edital</h1>
+
+ 	<div class="ui action input">
+  		{{form.nome}}
+	    	<input type="submit" value="Pesquisar" class='icon search'>
+	</div>
+</form>
+<table class="ui celled table">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Sigla</th>
+			<th>Descrição</th>
+			<th>Visualizar</th>
+			<th>Editar</th>
+		</tr>	
+	</thead>
+	<tbody>
+	{% for edital in editais %}
+		<tr>
+			<td>{{edital.nome}}</td>
+			<td>{{edital.sigla}}</td>
+			<td>{{edital.descricao}}</td>
+			<td class="negative"><a href="../visualizar_edital/{{edital.id}}">Mais</a></td>
+			<td><a href="../editar_edital/{{edital.id}}"><i class="settings icon"></a></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{{edital.nome}}
+{%endblock%}

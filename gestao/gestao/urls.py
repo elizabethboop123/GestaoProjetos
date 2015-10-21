@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^editar_tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^consulta_recurso/', ConsultaRecurso.as_view()),
-    #url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
+    url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
 
 
     url(r'^artefato/', CadastroArtefato.as_view()),
