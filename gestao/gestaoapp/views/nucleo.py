@@ -54,3 +54,21 @@ class ConsultaNucleo(LoginRequiredMixin, View):
 			form = Busca(request.POST)				
 			nucleo = Nucleo.objects.all()
 		return render(request, self.template, {'nucleos': nucleo,"form": form})
+
+class VisualizarNucleo(LoginRequiredMixin, View):
+	
+	template = "nucleo/visualizar.html"
+	
+	def get(self, request, nucleo_id=None):
+		
+		if nucleo_id:
+			nucleo = Nucleo.objects.get(id=nucleo_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'nucleo': nucleo})
+	
+	def post(self, request):
+		
+		return render(request, self.template)
