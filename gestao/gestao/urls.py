@@ -33,14 +33,15 @@ urlpatterns = [
     url(r'^nucleo/', CadastroNucleo.as_view()),
     url(r'^editar_nucleo/(?P<nucleo_id>\d+)/$', CadastroNucleo.as_view()),
     url(r'^consulta_nucleo/', ConsultaNucleo.as_view()),
-    # url(r'^visualizar_nucleo/(?P<nucleo_id>\d+)/$', VisualizarNucleo.as_view()),
+    url(r'^visualizar_nucleo/(?P<nucleo_id>\d+)/$', VisualizarNucleo.as_view()),
 
     url(r'^recurso/', CadastroRecurso.as_view()),
     url(r'^editar_recurso/(?P<recurso_id>\d+)/$', CadastroRecurso.as_view()),
     url(r'^tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^editar_tipo_recurso/', CadastroTipoRecurso.as_view()),
     url(r'^consulta_recurso/', ConsultaRecurso.as_view()),
-    # url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
+    #url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
+
 
     url(r'^artefato/', CadastroArtefato.as_view()),
     url(r'^editar_artefato/(?P<artefato_id>\d+)/$', CadastroArtefato.as_view()),
@@ -52,10 +53,11 @@ urlpatterns = [
     url(r'^consulta_atividade/', ConsultaAtividade.as_view()),
     # url(r'^visualizar_atividade/(?P<atividade_id>\d+)/$', VisualizarAtividade.as_view()),
 
+
     url(r'^edital/', CadastroEdital.as_view()),
     url(r'^editar_edital/(?P<edital_id>\d+)/$', CadastroEdital.as_view()),
     url(r'^consulta_edital/', ConsultaEdital.as_view()),
-    # url(r'^visualizar_edital/(?P<edital_id>\d+)/$', VisualizarEdital.as_view()),
+    #url(r'^visualizar_edital/(?P<edital_id>\d+)/$', VisualizarEdital.as_view()),
 
     url(r'^projeto/', CadastroProjeto.as_view()),
     url(r'^editar_projeto/(?P<projeto_id>\d+)/$', CadastroProjeto.as_view()),
