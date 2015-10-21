@@ -54,3 +54,21 @@ class ConsultaArtefato(LoginRequiredMixin, View):
 			form = Busca(request.POST)				
 			artefato = Artefato.objects.all()
 		return render(request, self.template, {'artefatos': artefato,"form": form})
+
+class VisualizarArtefato(LoginRequiredMixin, View):
+	
+	template = "artefato/visualizar.html"
+	
+	def get(self, request, artefato_id=None):
+		
+		if artefato_id:
+			artefato = Artefato.objects.get(id=artefato_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'artefato': artefato})
+	
+	def post(self, request):
+		
+		return render(request, self.template)

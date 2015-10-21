@@ -4,11 +4,11 @@ from gestaoapp.views.usuario import CadastroUsuario, VerificarUsuario, ConsultaU
 from gestaoapp.views.perfil import CadastroPerfil
 from gestaoapp.views.horario import CadastroHorario
 from gestaoapp.views.nucleo import CadastroNucleo, ConsultaNucleo, VisualizarNucleo
-from gestaoapp.views.recurso import CadastroRecurso, ConsultaRecurso
+from gestaoapp.views.recurso import CadastroRecurso, ConsultaRecurso, VisualizarVisualizar
 from gestaoapp.views.tiporecurso import CadastroTipoRecurso
-from gestaoapp.views.artefato import CadastroArtefato, ConsultaArtefato
-from gestaoapp.views.atividade import CadastroAtividade, ConsultaAtividade
-from gestaoapp.views.edital import CadastroEdital, ConsultaEdital
+from gestaoapp.views.artefato import CadastroArtefato, ConsultaArtefato, VisualizarArtefato
+from gestaoapp.views.atividade import CadastroAtividade, ConsultaAtividade, VisualizarAtividade
+from gestaoapp.views.edital import CadastroEdital, ConsultaEdital, VisualizarEdital
 from gestaoapp.views.projeto import CadastroProjeto, ConsultaProjeto, VisualizarProjeto
 from gestaoapp.views.tipoprojeto import CadastroTipoProjeto
 
