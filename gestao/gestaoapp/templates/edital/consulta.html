@@ -8,7 +8,7 @@
 
  	<div class="ui action input">
   		{{form.nome}}
-	    	<input type="submit" value="Pesquisar" class='icon search'>
+	    <input type="submit" value="Pesquisar" class='icon search'>
 	</div>
 </form>
 <table class="ui celled table">
@@ -24,7 +24,7 @@
 	{% for edital in editais %}
 		<tr>
 			<td>{{edital.numero}}</td>
-			<td>{{edital.orgao}}</td>
+			<td>{{edital.orgao_concedente}}</td>
 			<td class="negative"><a href="../visualizar_edital/{{edital.id}}">Mais</a></td>
 			<td><a href="../editar_edital/{{edital.id}}"><i class="settings icon"></a></td>
 		</tr>
