@@ -172,15 +172,16 @@
                 {% endif %}
             </div>
             <div class="field">
-                    <label>Fase do Projeto</label>
-                    {{form.fase}}
-                    {% if form.fase.errors %}
-                        <div class="ui red pointing label">
-                            {{ form.fase.errors }}
-                        </div>
-                    {% endif %}
-                </div>
-			    <input type="submit" class="ui submit button direita verde_escuro"/>	
+                <label>Fase do Projeto</label>
+                {{form.fase}}
+                {% if form.fase.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.fase.errors }}
+                    </div>
+                {% endif %}
+            </div>
+		    <button class="ui submit button red">Cancelar</button>
+            <input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>	
 		</div>
 	</form>
 {%else%}

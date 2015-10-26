@@ -4,7 +4,7 @@
 {% if user.is_superuser %}
 			
 <div class="ui segment form">
-	<h2 class="ui header">Informações do Projeto</h2>
+	<h2 class="ui header">Informações de Recursos</h2>
 	<div class="two fields">
 		<div class="field">
 			<label>Código</label>
@@ -25,8 +25,9 @@
 			{{recurso.descricao}}
 		</div>
 	</div>
-	<a href='/consulta_projeto/'><button class='ui red button'>Voltar</button></a>
-	<a href='/editar_recurso/{{recurso.id}}'><button class="ui button direita verde_escuro">Editar </button></a>
 </div>
+<a href='/consulta_recurso/'><button class='ui red button'>Voltar</button></a>
+<a href='/editar_recurso/{{recurso.id}}'><button class="ui button direita verde_escuro">Editar </button></a>
+
 {%endif%}
 {% endblock %}

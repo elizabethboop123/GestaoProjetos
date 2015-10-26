@@ -42,22 +42,20 @@ urlpatterns = [
     url(r'^consulta_recurso/', ConsultaRecurso.as_view()),
     url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
 
-
     url(r'^artefato/', CadastroArtefato.as_view()),
     url(r'^editar_artefato/(?P<artefato_id>\d+)/$', CadastroArtefato.as_view()),
     url(r'^consulta_artefato/', ConsultaArtefato.as_view()),
-    # url(r'^visualizar_artefato/(?P<artefato_id>\d+)/$', VisualizarArtefato.as_view()),
+    url(r'^visualizar_artefato/(?P<artefato_id>\d+)/$', VisualizarArtefato.as_view()),
     
     url(r'^atividade/', CadastroAtividade.as_view()),
     url(r'^editar_atividade/(?P<atividade_id>\d+)/$', CadastroAtividade.as_view()),
     url(r'^consulta_atividade/', ConsultaAtividade.as_view()),
-    # url(r'^visualizar_atividade/(?P<atividade_id>\d+)/$', VisualizarAtividade.as_view()),
-
+    url(r'^visualizar_atividade/(?P<atividade_id>\d+)/$', VisualizarAtividade.as_view()),
 
     url(r'^edital/', CadastroEdital.as_view()),
     url(r'^editar_edital/(?P<edital_id>\d+)/$', CadastroEdital.as_view()),
     url(r'^consulta_edital/', ConsultaEdital.as_view()),
-    #url(r'^visualizar_edital/(?P<edital_id>\d+)/$', VisualizarEdital.as_view()),
+    url(r'^visualizar_edital/(?P<edital_id>\d+)/$', VisualizarEdital.as_view()),
 
     url(r'^projeto/', CadastroProjeto.as_view()),
     url(r'^editar_projeto/(?P<projeto_id>\d+)/$', CadastroProjeto.as_view()),

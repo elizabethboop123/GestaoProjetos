@@ -15,13 +15,13 @@
 	<thead>
 		<tr>
 			<th>Número</th>
-			<th>Orgão</th>
+			<th>Orgão Concedente</th>
 			<th>Visualizar</th>
 			<th>Editar</th>
 		</tr>	
 	</thead>
 	<tbody>
-	{% for edital in editais %}
+	{% for edital in editals %}
 		<tr>
 			<td>{{edital.numero}}</td>
 			<td>{{edital.orgao_concedente}}</td>
