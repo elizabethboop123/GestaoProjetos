@@ -46,7 +46,7 @@ urlpatterns = [
     url(r'^artefato/', CadastroArtefato.as_view()),
     url(r'^editar_artefato/(?P<artefato_id>\d+)/$', CadastroArtefato.as_view()),
     url(r'^consulta_artefato/', ConsultaArtefato.as_view()),
-    # url(r'^visualizar_artefato/(?P<artefato_id>\d+)/$', VisualizarArtefato.as_view()),
+    url(r'^visualizar_artefato/(?P<artefato_id>\d+)/$', VisualizarArtefato.as_view()),
     
     url(r'^atividade/', CadastroAtividade.as_view()),
     url(r'^editar_atividade/(?P<atividade_id>\d+)/$', CadastroAtividade.as_view()),
