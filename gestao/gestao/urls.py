@@ -42,7 +42,6 @@ urlpatterns = [
     url(r'^consulta_recurso/', ConsultaRecurso.as_view()),
     url(r'^visualizar_recurso/(?P<recurso_id>\d+)/$', VisualizarRecurso.as_view()),
 
-
     url(r'^artefato/', CadastroArtefato.as_view()),
     url(r'^editar_artefato/(?P<artefato_id>\d+)/$', CadastroArtefato.as_view()),
     url(r'^consulta_artefato/', ConsultaArtefato.as_view()),
@@ -53,7 +52,6 @@ urlpatterns = [
     url(r'^consulta_atividade/', ConsultaAtividade.as_view()),
     url(r'^visualizar_atividade/(?P<atividade_id>\d+)/$', VisualizarAtividade.as_view()),
 
-
     url(r'^edital/', CadastroEdital.as_view()),
     url(r'^editar_edital/(?P<edital_id>\d+)/$', CadastroEdital.as_view()),
     url(r'^consulta_edital/', ConsultaEdital.as_view()),
@@ -63,7 +61,7 @@ urlpatterns = [
     url(r'^editar_projeto/(?P<projeto_id>\d+)/$', CadastroProjeto.as_view()),
     url(r'^consulta_projeto/', ConsultaProjeto.as_view()),
     url(r'^visualizar_projeto/(?P<projeto_id>\d+)/$', VisualizarProjeto.as_view()),
-
-
+    
+    url(r'^horaprojeto/', CadastroHoraProjeto.as_view()),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
