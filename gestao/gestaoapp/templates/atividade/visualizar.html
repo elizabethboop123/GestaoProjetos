@@ -18,7 +18,9 @@
 			</div>
 			<div class="field">
 				<label>Artefato</label>
-				{{atividade.artefato}}
+				{% for artefato in atividade.artefato.all %} 
+					{{artefato.nome}}
+				{%endfor%}
 			</div>
 		</div> 
 		<a href='/consulta_atividade/'><button class='ui red button'>Voltar</button></a>
