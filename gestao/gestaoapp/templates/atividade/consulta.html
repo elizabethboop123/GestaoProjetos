@@ -26,7 +26,9 @@
 		<tr>
 			<td>{{atividade.nome}}</td>
 			<td>{{atividade.descricao}}</td>
-			<td>{{atividade.artefato}}</td>
+			{% for artefato in atividade.artefato.all %} 
+			<td>{{artefato.nome}}</td>
+			{%endfor%}
 			<td class="negative"><a href="../visualizar_atividade/{{atividade.id}}">Mais</a></td>
 			<td><a href="../editar_atividade/{{atividade.id}}"><i class="settings large icon"></a></td>
 		</tr>
