@@ -7,8 +7,8 @@ from gestaoapp.views.nucleo import CadastroNucleo, ConsultaNucleo, VisualizarNuc
 from gestaoapp.views.recurso import CadastroRecurso, ConsultaRecurso, VisualizarRecurso
 from gestaoapp.views.tiporecurso import CadastroTipoRecurso
 from gestaoapp.views.artefato import CadastroArtefato, ConsultaArtefato, VisualizarArtefato
-from gestaoapp.views.atividade import CadastroAtividade, ConsultaAtividade
-from gestaoapp.views.edital import CadastroEdital, ConsultaEdital
+from gestaoapp.views.atividade import CadastroAtividade, ConsultaAtividade, VisualizarAtividade
+from gestaoapp.views.edital import CadastroEdital, ConsultaEdital, VisualizarEdital
 from gestaoapp.views.projeto import CadastroProjeto, ConsultaProjeto, VisualizarProjeto
 from gestaoapp.views.tipoprojeto import CadastroTipoProjeto
 from gestaoapp.views.horaprojeto import CadastroHoraProjeto

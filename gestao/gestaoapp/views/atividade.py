@@ -56,3 +56,21 @@ class ConsultaAtividade(LoginRequiredMixin, View):
 			form = Busca(request.POST)				
 			atividade = Atividade.objects.all()
 		return render(request, self.template, {'atividades': atividade,"form": form})
+
+class VisualizarAtividade(LoginRequiredMixin, View):
+	
+	template = "atividade/visualizar.html"
+	
+	def get(self, request, atividade_id=None):
+		
+		if atividade_id:
+			atividade = Atividade.objects.get(id=atividade_id)
+
+		else:
+			return render(request, self.template, { })
+
+		return render(request, self.template, {'atividade': atividade})
+	
+	def post(self, request):
+		
+		return render(request, self.template)

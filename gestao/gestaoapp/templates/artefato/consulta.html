@@ -10,10 +10,11 @@
   		{{form.nome}}
 	    	<input type="submit" value="Pesquisar" class='icon search'>
 	</div>
+</form>
 <table class="ui celled table">
 	<thead>
 		<tr>
-			<th>Tipo</th>
+			<th>Nome</th>
 			<th>Descrição</th>
 			<th>Visualizar</th>
 			<th>Editar</th>
@@ -25,7 +26,7 @@
 			<td>{{artefato.nome}}</td>
 			<td>{{artefato.descricao}}</td>
 			<td class="negative"><a href="../visualizar_artefato/{{artefato.id}}">Mais</a></td>
-			<td><a href="../editar_artefato/{{artefato.id}}"><i class="settings icon"></a></td>
+			<td><a href="../editar_artefato/{{artefato.id}}"><i class="settings large icon"></a></td>
 		</tr>
 	{% endfor %}
 	</tbody>

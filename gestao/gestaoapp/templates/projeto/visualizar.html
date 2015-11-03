@@ -2,138 +2,133 @@
 {% block titulo %} 	 Visualizar Projeto {% endblock %}
 {% block conteudo %}
 {% if user.is_superuser %}
-
-		<div class="row">
-			<div class="three wide column"></div>
-			<div class="fifteen wide column">       
-				<div class="ui form">
-					<h2 class="ui header">
-						Informações do Projeto
-					</h2>
-				</div>
-				<div class="ui segment form">
-					<div class="two fields">
-						<div class="field">
-							<label>Nome</label>
-							{{projeto.nome}}
-						</div>
-						<div class="field">
-							<label>Edital</label>
-							{% for edital in projeto.edital.all %} 
-								{{edital.numero}}
-							{%endfor%}
-						</div>
-					</div>
-					<div class="field">
-						<label>Descrição</label>
-						{{projeto.descricao}}
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Núcleo</label>
-							{% for nucleo in projeto.nucleo.all %} 
-								{{nucleo.nome}}
-							{%endfor%}
-						</div>
-						<div class="field">
-							<label>Tipo</label>
-							{{projeto.tipo}}
-						</div>
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Situação</label>
-							{{projeto.situacao}}
-						</div>
-						<div class="field">
-							<label>Duração</label>
-							{{projeto.duracao}}
-						</div>
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Coordenador</label>
-							{{projeto.coordenador}}
-						</div>
-						<div class="field">
-							<label>Data de Cadastro</label>
-							{{projeto.data_cadastro}}
-						</div>
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Data de Início</label>
-							{{projeto.data_inicio}}
-						</div>
-						<div class="field">
-							<label>Data de Fim</label>
-							{{projeto.data_fim}}
-						</div>
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Atividade</label>
-							<table class="ui celled table">
-								<thead>
-									<tr>
-										<th>Atividade</th>
-									</tr>	
-								</thead>
-								<tbody>
-								{% for atividade in projeto.atividade.all %} 
-									<tr>	 
-										<td>{{atividade.nome}} </td>
-									</tr>
-								{%endfor%}
-								</tbody>
-							</table>
-						</div>
-						<div class="field">
-							<label>Equipe</label>
-							<table class="ui celled table">
-								<thead>
-									<tr>
-										<th>Equipe</th>
-									</tr>	
-								</thead>
-								<tbody>
-								{% for equipe in projeto.equipe.all %} 
-									<tr>	 
-										<td>{{equipe.first_name}} {{equipe.last_name}} </td>
-									</tr>
-								{%endfor%}
-								</tbody>
-							</table>	
-						</div>
-					</div>
-					<div class="two fields">
-						<div class="field">
-							<label>Recursos</label>
-							<table class="ui celled table">
-								<thead>
-									<tr>
-										<th>Recurso</th>
-									</tr>	
-								</thead>
-								<tbody>
-								{% for recurso in projeto.recurso.all %}
-									<tr>	 
-										<td>{{recurso.nome}}</td>
-									</tr>
-								{%endfor%}
-								</tbody>
-							</table>
-						</div>
-						<div class="field">
-							<label>Quantidade de Bolsas</label>
-							{{projeto.qtd_bolsa}}
-						</div>
-					</div>
-				</div> 
-				<a href='/consulta_projeto/'><button class='ui red button'>Voltar</button></a>
-				<a href='/editar_projeto/{{projeto.id}}'><button class="ui button direita verde_escuro">Editar </button></a>
-			</div>	
+			
+<div class="ui segment form">
+	<h2 class="ui header">Informações do Projeto</h2>
+	<div class="two fields">
+		<div class="field">
+			<label>Nome</label>
+			{{projeto.nome}}
 		</div>
+		<div class="field">
+			<label>Edital</label>
+			{% for edital in projeto.edital.all %} 
+				{{edital.numero}}
+			{%endfor%}
+		</div>
+	</div>
+	<div class="two fields">
+		<div class="field">
+			<label>Descrição</label>
+			{{projeto.descricao}}
+		</div>
+		<div class="field">
+			<label>Núcleo</label>
+			{% for nucleo in projeto.nucleo.all %} 
+				{{nucleo.nome}}
+			{%endfor%}
+		</div>
+	</div>
+	<div class="two fields">	
+		<div class="field">
+			<label>Tipo</label>
+			{{projeto.tipo}}
+		</div>
+		<div class="field">
+			<label>Situação</label>
+			{{projeto.situacao}}
+		</div>
+	</div>
+	<div class="two fields">
+		<div class="field">
+			<label>Duração</label>
+			{{projeto.duracao}}
+		</div>
+		<div class="field">
+			<label>Coordenador</label>
+			{{projeto.coordenador}}
+		</div>
+	</div>
+	<div class="two fields">
+		
+		<div class="field">
+			<label>Data de Cadastro</label>
+			{{projeto.data_cadastro}}
+		</div>
+		<div class="field">
+			<label>Data de Fim</label>
+			{{projeto.data_fim}}
+		</div>
+	</div>
+	<div class="two fields">
+		<div class="field">
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>Equipe</th>
+					</tr>	
+				</thead>
+				<tbody>
+				{% for equipe in projeto.equipe.all %} 
+					<tr>	 
+						<td>{{equipe.first_name}} {{equipe.last_name}} </td>
+					</tr>
+				{%endfor%}
+				</tbody>
+			</table>	
+		</div>
+		<div class="field">
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>Recursos</th>
+					</tr>	
+				</thead>
+				<tbody>
+				{% for recurso in projeto.recurso.all %}
+					<tr>	 
+						<td>{{recurso.nome}}</td>
+					</tr>
+				{%endfor%}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="two fields">
+		<div class="field">
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>Atividade</th>
+					</tr>	
+				</thead>
+				<tbody>
+				{% for atividade in projeto.atividade.all %} 
+					<tr>	 
+						<td>{{atividade.nome}} </td>
+					</tr>
+				{%endfor%}
+				</tbody>
+			</table>
+		</div>
+		<div class="field">
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>Quantidade de Bolsas</th>
+					</tr>	
+				</thead>
+				<tbody>
+					<tr>	 
+						<td>{{projeto.qtd_bolsa}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<a href='/consulta_projeto/'><button class='ui red button'>Voltar</button></a>
+<a href='/editar_projeto/{{projeto.id}}'><button class="ui button direita verde_escuro">Editar </button></a>
 {%else%}
 <div class='ui centered grid'>
 	<div class='two column centered row'>
