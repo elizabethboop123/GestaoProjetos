@@ -4,12 +4,10 @@
 
 <form method='POST' action='/consulta_projeto/' class="ui form">
  	{% csrf_token %}
- 	<h1 class=" ui header">Consulta Projeto</h1>
-
+ 	<h1 class="ui header">Consulta Projeto</h1>
  	<div class="ui action input">
   		{{form.nome}}
 	    	<input type="submit" value="Pesquisar" class='icon search'>
-
 	</div>
 </form>
 <table class="ui celled table">
@@ -19,7 +17,7 @@
 			<th>Data de Inicio</th>
 			<th>Data de Finalização</th>
 			<th>Situação</th>
-			<th>Nucleos da Fabrica</th>
+			<th>Núcleos da Fábrica</th>
 			<th>Coordenador do Projeto</th>
 			<th>Visualizar</th>
 			<th>Editar</th>
@@ -38,7 +36,6 @@
 			<td>{{ projeto.coordenador }}</td>
 			<td><a href="../visualizar_projeto/{{projeto.id}}">Mais</a></td>
 			<td><a href="../editar_projeto/{{projeto.id}}"><i class="settings large icon"></a></td>
-
 		</tr>
 	{% endfor %}
 	</tbody>

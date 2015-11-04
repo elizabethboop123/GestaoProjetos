@@ -54,6 +54,7 @@ input.icon.search{
 
 .item{
 	color:#fff !important;
+	cursor: pointer;
 
 }
 
@@ -75,6 +76,7 @@ input.icon.search{
 	top: 100%;
 	z-index: 999;
 	background-color: #005e83;
+	margin-top: 2% !important;
 }
 
 .submenu i{
@@ -84,9 +86,6 @@ input.icon.search{
 .layout.block{ margin-right: -6px !important;}
 .submenu i, .submenu a {
 	display: inline-flex !important;
-}
-.item{
-	cursor: pointer;
 }
 
 /********************Definições de form*************************/
@@ -122,7 +121,7 @@ input.verde_escuro{
 }
 
 
-/********************Definições de qualquer coisa que eu nao sei o que é*************************/
+/********************Definições de qualquer coisa*************************/
 
 .ui.pointing.label{
 	font-size: 100%;

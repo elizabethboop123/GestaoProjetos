@@ -2,50 +2,49 @@
 {% block titulo %} Cadastro de Núcleo{% endblock %}
 {% block conteudo%} 
 {% if user.is_superuser %}
-	<form method='POST' enctype=" multipart/form-data">
+	<form method='POST' enctype=" multipart/form-data" class="ui form">
         {% csrf_token %}           
         <h1 class="ui header">
         {%if editar %}
             Editar Núcleo
         {% else %}
             Cadastro de Núcleo
-        {%endif%}</h1>
-        <div class="ui large form">
-	        <div class="two fields">
-			    <div class="field">
-			        <label>Nome</label>
-			        {{form.nome}}
-			        {% if form.nome.errors %}
-			        	<div class="ui red pointing label">
-			            	{{ form.nome.errors }}
-			            </div>
-			        {% endif %}
-			    </div>
-			    <div class="field">
-			        <label>Sigla</label>
-			        {{form.sigla}}
-			        {% if form.sigla.errors %}
-			            <div class="ui red pointing label">
-			                {{ form.sigla.errors }}
-			            </div>
-			        {% endif %}
-				</div>
+        {%endif%}
+        </h1>
+        <div class="two fields">
+		    <div class="field">
+		        <label>Nome</label>
+		        {{form.nome}}
+		        {% if form.nome.errors %}
+		        	<div class="ui red pointing label">
+		            	{{ form.nome.errors }}
+		            </div>
+		        {% endif %}
 		    </div>
-            <div class="field">
-                <label>Descrição</label>
-                {{form.descricao}}
-                {% if form.descricao.errors %}
-                 	<div class="ui red pointing label">
-                   		{{ form.descricao.errors }}
-                 	</div>
-                {% endif %}
-            </div>
-            <button class="ui submit button red">Cancelar</button>
-	        <input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>
+		    <div class="field">
+		        <label>Sigla</label>
+		        {{form.sigla}}
+		        {% if form.sigla.errors %}
+		            <div class="ui red pointing label">
+		                {{ form.sigla.errors }}
+		            </div>
+		        {% endif %}
+			</div>
 	    </div>
+        <div class="field">
+            <label>Descrição</label>
+            {{form.descricao}}
+            {% if form.descricao.errors %}
+             	<div class="ui red pointing label">
+               		{{ form.descricao.errors }}
+             	</div>
+            {% endif %}
+        </div>
+        <button class="ui submit button red">Cancelar</button>
+        <input type="submit" value="Enviar" class="ui submit button direita verde_escuro"/>
 	</form>
 	{%else%}
-		<div class='ui centered grid'>
+	<div class='ui centered grid'>
 		<div class='two column centered row'>
 			<div class='ui column centered'>
 				<div class='ui centered'>
