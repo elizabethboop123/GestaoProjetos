@@ -18,3 +18,6 @@ def sucesso(request):
 
 def cadastro_liberado(request):
 	return render(request, 'usuario/cadastro_liberado.html')
+
+def home(request):
+	return render(request, 'home/index.html')
