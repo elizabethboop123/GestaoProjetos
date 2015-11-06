@@ -17,8 +17,10 @@
 			<th>Nome</th>
 			<th>Descrição</th>
 			<th>Artefato</th>
-			<th>Visualizar</th>
-			<th>Editar</th>
+			{% if user.is_superuser %}
+				<th>Visualizar</th>
+				<th>Editar</th>
+			{% endif %}
 		</tr>	
 	</thead>
 	<tbody>
@@ -29,8 +31,10 @@
 			{% for artefato in atividade.artefato.all %} 
 			<td>{{artefato.nome}}</td>
 			{%endfor%}
-			<td class="negative"><a href="../visualizar_atividade/{{atividade.id}}">Mais</a></td>
-			<td><a href="../editar_atividade/{{atividade.id}}"><i class="settings large icon"></a></td>
+			{% if user.is_superuser %}
+				<td class="negative"><a href="../visualizar_atividade/{{atividade.id}}">Mais</a></td>
+				<td><a href="../editar_atividade/{{atividade.id}}"><i class="settings large icon"></a></td>
+			{% endif %}
 		</tr>
 	{% endfor %}
 	</tbody>

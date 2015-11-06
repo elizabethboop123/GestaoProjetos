@@ -14,8 +14,10 @@
 		<tr>
 			<th>Código</th>
 			<th>Nome</th>
-			<th>Visualizar</th>
-			<th>Editar</th>
+			{% if user.is_superuser %}
+				<th>Visualizar</th>
+				<th>Editar</th>
+			{% endif %}
 		</tr>	
 	</thead>
 	<tbody>
@@ -23,8 +25,10 @@
 		<tr>
 			<td>{{recurso.codigo}}</td>
 			<td>{{recurso.nome}}</td>
-			<td class="negative"><a href="../visualizar_recurso/{{recurso.id}}">Mais</a></td>
-			<td><a href="../editar_recurso/{{recurso.id}}"><i class="settings  large icon"></a></td>
+			{% if user.is_superuser %}
+				<td class="negative"><a href="../visualizar_recurso/{{recurso.id}}">Mais</a></td>
+				<td><a href="../editar_recurso/{{recurso.id}}"><i class="settings  large icon"></a></td>
+			{% endif %}
 		</tr>
 	{% endfor %}
 	</tbody>

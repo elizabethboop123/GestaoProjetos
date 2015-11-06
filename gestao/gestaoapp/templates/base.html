@@ -45,10 +45,12 @@
                             </div>
                             <div class="item">Projeto <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                {% if user.is_superuser %}
                                     <a class='item' href="/projeto/cadastro.html"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_projeto" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Projeto
@@ -65,10 +67,12 @@
                             </div>
                             <div class="item">Núcleo <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                {% if user.is_superuser %}
                                     <a class='item' href="/nucleo"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_nucleo" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Núcleo
@@ -77,6 +81,7 @@
                             </div>
                             <div class="item">Recursos <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                {% if user.is_superuser %}
                                     <a href="/tipo_recurso" class="item branco">
                                         <i class="ui icon newspaper"></i>
                                         Cadastrar Tipo
@@ -85,6 +90,7 @@
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_recurso" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Recursos
@@ -93,10 +99,12 @@
                             </div>
                             <div class="item">Artefatos <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                {% if user.is_superuser %}
                                     <a class='item' href="/artefato/cadastro.html"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_artefato" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Artefatos
@@ -105,10 +113,12 @@
                             </div>
                             <div class="item">Edital <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                 {% if user.is_superuser %}
                                     <a class='item' href="/edital/cadastro.html"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_edital" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Edital
@@ -117,10 +127,12 @@
                             </div>
                             <div class="item">Atividades <i class='ui icon caret down'></i>
                                 <div class="submenu">
+                                {% if user.is_superuser %}
                                     <a class='item' href="/atividade/cadastro.html"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
                                     </a>
+                                {% endif %}
                                     <a href="/consulta_atividade" class="item branco">
                                         <i class="search icon branco"></i>
                                         Consulta Atividades
