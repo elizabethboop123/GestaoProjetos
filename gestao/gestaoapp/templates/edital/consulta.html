@@ -16,8 +16,10 @@
 		<tr>
 			<th>Número</th>
 			<th>Orgão Concedente</th>
-			<th>Visualizar</th>
-			<th>Editar</th>
+			{% if user.is_superuser %}
+				<th>Visualizar</th>
+				<th>Editar</th>
+			{% endif %}
 		</tr>	
 	</thead>
 	<tbody>
@@ -25,8 +27,10 @@
 		<tr>
 			<td>{{edital.numero}}</td>
 			<td>{{edital.orgao_concedente}}</td>
-			<td class="negative"><a href="../visualizar_edital/{{edital.id}}">Mais</a></td>
-			<td><a href="../editar_edital/{{edital.id}}"><i class="settings large icon"></a></td>
+			{% if user.is_superuser %}
+				<td class="negative"><a href="../visualizar_edital/{{edital.id}}">Mais</a></td>
+				<td><a href="../editar_edital/{{edital.id}}"><i class="settings large icon"></a></td>
+			{% endif %}
 		</tr>
 	{% endfor %}
 	</tbody>
