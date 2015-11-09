@@ -1,4 +1,6 @@
 """
+ISSO NAO E PARA APARECER SE APARECER ESTA COM ERRO!!!!!
+ Segundo teste
 
 Django settings for gestao project.
 
