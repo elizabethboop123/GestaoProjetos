@@ -84,15 +84,15 @@
                             <div class="item">Recursos <i class='ui icon caret down'></i>
                                 <div class="submenu">
                                 {% if user.is_superuser %}
-                                    <a href="/tipo_recurso" class="item branco">
-                                        <i class="ui icon newspaper"></i>
-                                        <div class='content'>
-                                            Cadastrar Tipo
-                                        </div>
-                                    </a>
                                     <a class='item' href="/recurso/cadastro.html"> 
                                         <i class='ui icon newspaper'></i>
                                         Cadastrar 
+                                    </a>
+                                    <a href="/tipo_recurso" class="item branco">
+                                        <i class="ui icon add square"></i>
+                                        <div class='content'>
+                                            Cadastrar Tipo
+                                        </div>
                                     </a>
                                 {% endif %}
                                     <a href="/consulta_recurso" class="item branco">
