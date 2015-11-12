@@ -22,4 +22,11 @@ $(document).ready(function(){
 		
 
 	})
+
+	$('.atividade .field input').each(function(){
+		if($(this).attr('id') == 'id_nome')
+			conteudo = $(this).val()
+			if (conteudo != '')
+				$('.direita').css('margin-top','-30px');
+	})
 })
