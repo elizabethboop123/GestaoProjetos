@@ -32,7 +32,7 @@ class CadastroAtividade(View):
 			
 		if form.is_valid():
 			form.save(request)
-			return redirect('/sucesso')
+			return redirect('/cadastro_sucesso')
 
 		else:
 			return render(request, self.template, {'form': form})
