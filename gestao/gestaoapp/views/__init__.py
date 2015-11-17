@@ -21,3 +21,6 @@ def cadastro_liberado(request):
 
 def home(request):
 	return render(request, 'home/index.html')
+
+def cadastro_sucesso(request):
+	return render(request, 'cadastro_sucesso')

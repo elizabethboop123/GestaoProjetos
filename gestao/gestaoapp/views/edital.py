@@ -33,7 +33,7 @@ class CadastroEdital(LoginRequiredMixin, View):
 		if form.is_valid():
 			form.save(request)
 
-			return redirect('/')
+			return redirect('/sucesso')
 
 		else:
 			return render(request, self.template, {'form': form})

@@ -26,6 +26,8 @@ urlpatterns = [
 
     url(r'^sucesso/', sucesso),
     url(r'^cadastro_liberado/', cadastro_liberado),
+
+    url(r'^cadastro_sucesso/', cadastro_sucesso),
     
     url(r'^home/', home),
 

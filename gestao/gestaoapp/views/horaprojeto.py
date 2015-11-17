@@ -31,6 +31,6 @@ class CadastroHoraProjeto(LoginRequiredMixin,View):
 			
 		if form.is_valid():
 			form.save(request)
-			return redirect('/horaprojeto')
+			return redirect('/sucesso')
 		else:
 			return render(request, self.template, {'form': form})

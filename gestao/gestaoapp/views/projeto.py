@@ -32,7 +32,7 @@ class CadastroProjeto(LoginRequiredMixin,View):
 			
 		if form.is_valid():
 			form.save(request)
-			return redirect('/projeto')
+			return redirect('/sucesso')
 		else:
 			return render(request, self.template, {'form': form})
 
