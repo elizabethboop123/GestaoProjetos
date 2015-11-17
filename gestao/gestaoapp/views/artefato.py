@@ -31,7 +31,7 @@ class CadastroArtefato(LoginRequiredMixin,View):
 			
 		if form.is_valid():
 			form.save(request)
-			return redirect('/artefato')
+			return redirect('/sucesso')
 		else:
 			return render(request, self.template, {'form': form})
 
